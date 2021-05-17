@@ -18,7 +18,7 @@ quizType.addEventListener('change', (e) => {
 quizSubmit.addEventListener('click', async (e) => {
     console.log('click event');
     let data = {
-        user: "brian",
+        user: "wow",
         quiz: [1,2,123,4,5],
         custom: customQuiz
     }
