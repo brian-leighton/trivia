@@ -13,42 +13,31 @@ app.use(express.json());
 const io = require('socket.io')(server);
 const users = {};
 
-io.on('connection', socket => {
-    console.log(users);
+io.on('connection', async(socket) => {
     socket.on("new-user", user => {
         users[socket.id] = user;
-        socket.broadcast.emit('new-user', user);
-    });
+        socket.broadcast.emit('new-user', users[socket.id]);    });
     socket.on("new-chat-message", message => {
         socket.broadcast.emit('chat-message', message);
     });
+    socket.on('disconnect', () => {
+        socket.broadcast.emit('disconnect-message', users[socket.id]);
+    })
 });
 
 
 //ROUTES
 
+require('./routes/database')(app);
+//PAGES
 app.get("/", (req, res) => {
     res.sendFile(path.resolve('public/pages', 'index.html'));
 });
-
-app.get("/trivia", (req, res) => {
-    res.sendFile(path.resolve('public/pages', 'trivia.html'));
+app.get("/trivia/:id", (req, res) => {
+    res.sendFile(path.resolve('public/pages', 'trivia.html')); 
 });
 
-let quiz;
-
-app.post("/new/quiz", (req, res) => {
-    console.log('route hit', req.body);
-    //if the new quiz isn't custom return api call result
-    if(!req.body.custom){
-
-    }
-    //handle custom quiz input
-    quiz = {name: req.body.user}
-    // console.log(quiz);
-    res.send(quiz);
-});
-
+//SERVER
 server.listen(PORT, () => {
     console.log("server listening on: ", PORT);
 });

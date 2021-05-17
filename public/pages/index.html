@@ -7,20 +7,27 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Quiz Creation</h1>
     <form>
-        <h1>Generate Quiz?</h1>
+        <input type="text" id="quiz_name">
+        <label for="quiz_name">Name your Quiz</label>
+        <label for="quiz_type">Custom?</label>
         <input type="checkbox" name="quiz_type" id="quiz_type">
-        <label for="quiz_type">Yes</label>
     </form>
-    <form action="/new/quiz">
+    <form action="/trivia">
         <div class="hidden" id="generated_quiz">
             generated quiz
+            <input type="number" id="question_total">
+            <label for="question_total">How Many Questions?</label>
         </div>
         <div class="hidden" id="user_quiz">
             user quiz
         </div>
+        <div id="quiz_submit">Create Quiz</div>
     </form>
-    <div id="quiz_submit">Create Quiz</div>
+    <div id="quiz_list">
+        
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" type="text/javascript"></script>
     <script src="scripts/script.js"></script>
 </body>

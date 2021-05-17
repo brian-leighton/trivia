@@ -1,11 +1,19 @@
-
 //QUIZ CREATION
 const quizType = document.getElementById("quiz_type"),
       quizSubmit = document.getElementById('quiz_submit'),
       generatedQuiz = document.getElementById('generated_quiz'),
-      userQuiz = document.getElementById('user_quiz');
+      questionTotal = document.getElementById('question_total'),
+      quizName = document.getElementById('quiz_name'),
+      userQuiz = document.getElementById('user_quiz'),
+      showQuizList = document.getElementById('quiz_list');
 // determine if user wants to input their own quiz, or if they want to generate one.
 let customQuiz = false;
+let quizList = [];
+window.onload = async (e) => {
+    let response = await axios.get("/get/trivia");
+    quizList = response.data;
+    console.log(response.data);
+}
 
 quizType.addEventListener('change', (e) => {
     customQuiz = quizType.checked;
@@ -16,22 +24,27 @@ quizType.addEventListener('change', (e) => {
 });
 
 quizSubmit.addEventListener('click', async (e) => {
-    console.log('click event');
-    let data = {
-        user: "wow",
-        quiz: [1,2,123,4,5],
-        custom: customQuiz
+    let triviaObj = {
+        title: quizName.value || "anon",
+        quiz: [],
+    };
+    if(!customQuiz){
+        console.log('value: ', questionTotal.value);
+        let request = await axios.get(`https://opentdb.com/api.php?amount=${questionTotal.value}`);
+        triviaObj.quiz = request.data.results;
     }
-    await axios.request({
-        method: "post",
-        url: "/new/quiz",
-        data
-    }).then((res) => {
-        console.log(res.data);
-        // console.log(JSON.parse(res.));
-    });
-    // console.log(response.config.data);
-    // axios.post("/new/quiz", data).then((response) => console.log(response.config.data));
+    try{
+        //save generated quiz to database
+        await axios.request({
+            method: "post",
+            url: "/new/quiz",
+            data: triviaObj,
+        }).then((res) => {
+            quizList.push({id: res.data, title: triviaObj.title, length: triviaObj.quiz.length});
+        });
+    } catch(err){
+        console.log(err);
+    }
 });
 
 
