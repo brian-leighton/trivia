@@ -23,9 +23,9 @@ function appendMessage(data){
 }
 // initial chatroom user setup
 const name = prompt("What name are you playing under today?");
-console.log('thing');
 appendMessage("You have connected..");
 socket.emit("new-user", name);
+
 // chatroom input submit
 chatSubmit.addEventListener('click', (e) => {
     e.preventDefault();

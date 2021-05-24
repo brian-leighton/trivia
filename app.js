@@ -28,7 +28,7 @@ io.on('connection', async(socket) => {
 
 //ROUTES
 
-require('./routes/database')(app);
+require('./routes/trivia')(app);
 //PAGES
 app.get("/", (req, res) => {
     res.sendFile(path.resolve('public/pages', 'index.html'));

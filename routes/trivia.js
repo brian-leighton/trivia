@@ -8,7 +8,6 @@ module.exports = (app) => {
     var db = new JsonDB(new Config("trivia", true, true, '/'));
     
     app.post("/new/quiz", async (req, res) => {
-        console.log('boddddd:', req.body);
         let id = Math.floor(Math.random() * 9999);
         try{
             db.push(`/${id}`, req.body);
@@ -32,16 +31,18 @@ module.exports = (app) => {
             res.send(data); 
         } catch(err){
             response = err;
+            res.send(response);
         }
-        res.send(response);
     });
 
     app.get("/get/trivia/:id", async(req, res) => {
+        console.log('triviiaaa');
         try{
-            let response = await db.getData(`/${req.params.id}`)
+            let response = await db.getData(`/${req.params.id}`);
             res.send(response);
         } catch(err){
-            res.send("Sorry we don't have a record of this quiz. Please try again.");
+            // res.send("Sorry we don't have a record of this quiz. Please try again.");
+            res.redirect("/")
         }
     });
 }

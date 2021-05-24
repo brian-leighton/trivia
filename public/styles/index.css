@@ -5,3 +5,9 @@ body{
 .message_board{
     background: white;
 }
+
+.hidden{
+    visibility: hidden;
+    opacity: 0;
+    background: blue;
+}

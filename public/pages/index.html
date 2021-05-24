@@ -4,27 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/index.css">
     <title>Document</title>
 </head>
 <body>
     <h1>Quiz Creation</h1>
     <form>
-        <input type="text" id="quiz_name">
-        <label for="quiz_name">Name your Quiz</label>
-        <label for="quiz_type">Custom?</label>
+        <label for="quiz_type">Create custom questions?</label>
         <input type="checkbox" name="quiz_type" id="quiz_type">
     </form>
+    <!-- Dynamically display the right form based on the user input -->
     <form action="/trivia">
-        <div class="hidden" id="generated_quiz">
-            generated quiz
-            <input type="number" id="question_total">
-            <label for="question_total">How Many Questions?</label>
+        <div>
+            <label for="quiz_name">Name your Quiz</label>
+            <input type="text" id="quiz_name">
         </div>
-        <div class="hidden" id="user_quiz">
-            user quiz
+        <div class="" id="generated_quiz">
+            <h1>Generated Quiz Settings</h1>
+            <div>
+                <label for="question_total">How Many Questions?</label>
+                <!-- <input type="number" min="0" max="50" step="1" id="question_total"> -->
+                <select name="" id="question_total">
+    
+                </select>
+            </div>
+            <div>
+                <label for="quiz_difficulty">How difficult?</label>
+                <select name="quiz_difficulty" id="quiz_difficulty">
+                    <option value="mixed">Any difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </div>
+        <div class="hidden" id="custom_quiz">
+            <h1>Custom Question Quiz</h1>
+            <label for="custom_question_type">Multiple Choice, or written answer?</label>
+            <select name="custom_question_type" id="custom_question_type">
+                <option value="multiple">Multiple Choice</option>
+                <option value="text">Written</option>
+            </select>
+            <!-- Written option inputs -->
+            <div id="custom_question_written" class="">
+                <label for="custom_question_difficulty">How hard is this question?</label>
+                <select name="custom_question_difficulty" id="custom_question_difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <label for="custom_question">Enter your custom Question</label>
+                <input type="text" id="custom_question">
+                <label for="custom_question_answer">What's the answer?</label>
+                <input type="text" id="custom_question_answer">
+            </div>
+            <!-- Multiple Choice option inputs -->
+            <div id="custom_question_multiple-container" class="hidden">
+                <label for="custom_question_multiple">Enter your Question</label>
+                <input type="text" id="custom_question_multiple">
+            </div>
         </div>
         <div id="quiz_submit">Create Quiz</div>
     </form>
+    <!-- Displays Currently worked on quiz questions -->
+    <!-- Display list of quizes in the DB -->
     <div id="quiz_list">
         
     </div>
