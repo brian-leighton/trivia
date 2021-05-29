@@ -4,7 +4,7 @@ const socket = io();
 const chatInput = document.getElementById("chat_input");
 const chatSubmit = document.getElementById("chat_submit");
 const messageContainer = document.getElementById("message_container");
-
+// do something
 let quiz = [];
 // the prompt overrides the .onload event -- place above the prompt
 
