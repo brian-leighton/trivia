@@ -1,0 +1,41 @@
+{
+    "1681": {
+        "title": "generated quiz",
+        "difficulty": "mixed",
+        "quiz": [
+            {
+                "category": "Science & Nature",
+                "type": "multiple",
+                "difficulty": "hard",
+                "question": "In the Scoville scale, what is the hottest chemical?",
+                "correct_answer": "Resiniferatoxin",
+                "incorrect_answers": [
+                    "Capsaicin",
+                    "Dihydrocapsaicin",
+                    "Tinyatoxin"
+                ]
+            }
+        ]
+    },
+    "5818": {
+        "title": "custom quiz",
+        "difficulty": "mixed",
+        "quiz": [
+            {
+                "question": "custom quiz",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "fff",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "",
+                        "isCorrect": false
+                    }
+                ]
+            }
+        ]
+    }
+}

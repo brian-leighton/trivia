@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quiz Creation</h1>
+    <form>
+        <label for="quiz_type">Create custom questions?</label>
+        <input type="checkbox" name="quiz_type" id="quiz_type">
+    </form>
+    <!-- Dynamically display the right form based on the user input -->
+    <form action="/trivia" id="triviaCreate">
+        <div>
+            <label for="quiz_name">Name your Quiz</label>
+            <input type="text" id="quiz_name">
+        </div>
+        <div class="" id="generated_quiz">
+            <h1>Generated Quiz Settings</h1>
+            <div>
+                <label for="question_total">How Many Questions?</label>
+                <!-- <input type="number" min="0" max="50" step="1" id="question_total"> -->
+                <select name="" id="question_total">
+    
+                </select>
+            </div>
+            <div>
+                <label for="quiz_difficulty">How difficult?</label>
+                <select name="quiz_difficulty" id="quiz_difficulty">
+                    <option value="mixed">Any difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </div>
+        <div class="hidden" id="custom_quiz">
+            <h1>Custom Question Quiz</h1>
+            <label for="custom_question_type">Multiple Choice, or written answer?</label>
+            <select name="custom_question_type" id="custom_question_type">
+                <option value="multiple">Multiple Choice</option>
+                <option value="text">Written</option>
+            </select>
+            <label for="custom_question">Enter your custom Question</label>
+            <input type="text" id="custom_question">
+            <label for="custom_question_difficulty">How hard is this question?</label>
+            <select name="custom_question_difficulty" id="custom_question_difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <!-- Written option inputs -->
+            <div id="custom_question_written" class="hidden">
+                <label for="custom_question_answer">What's the answer?</label>
+                <input type="text" id="custom_question_answer">
+            </div>
+            <!-- Multiple Choice option inputs -->
+            <div id="custom_question_multiple-container" class="">
+                <!-- Total answer choices -->
+                <label for="custom_question_multiple_total">How many answer choices?</label>
+                <select name="custom_question_multiple_total" id="custom_question_multiple_total">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <!-- Multiple Choice Answer Section -->
+                <label for="custom_question_multiple_answers">Add your answers</label>
+                <div id="custom_question_multiple_answers">
+                    <div class="multipleChoice__answer">
+                        <input type="text" class="multipleChoice__option">
+                        <label for="f">Is this the correct answer?</label>
+                        <input type="radio" name="isCorrect" class="isCorrect">
+                    </div>
+                    <div class="multipleChoice__answer">
+                        <input type="text" class="multipleChoice__option">
+                        <label for="isCorrect">Is this the correct answer?</label>
+                        <input type="radio" name="isCorrect" class="isCorrect">
+                    </div>
+                </div>
+            </div>
+            <div id="next_question">
+                Next Question
+            </div>
+        </div>
+        <div id="quiz_submit">Create Quiz</div>
+    </form>
+    <!-- Displays Currently worked on quiz questions -->
+    <!-- Display list of quizes in the DB -->
+    <div id="quiz_list">
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" type="text/javascript"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
