@@ -87,25 +87,21 @@ function renderAnswerInput(index) {
     return div;
 }
 
-
 //Quiz creation form handlers/functions
 let newQuiz = [];
-nextQuestion.addEventListener('click', () => createNextQuestion())
+nextQuestion.addEventListener('click', () => createNextQuestion());
 function createNextQuestion(){
     let customAnswerMultiple = document.querySelectorAll('.multipleChoice__option'),
         customAnswerWritten = document.getElementById('custom_question_answer'),
         questionDifficulty = document.getElementById('custom_question_difficulty'),
         isCorrectAnswer = document.querySelectorAll('.isCorrect');
 
-    console.log(customAnswerMultiple.length);
     let data = {
         question: customQuestion.value,
         type: customQuestionType.value,
         difficulty: questionDifficulty.value
     }
-    // let result = {
-    //     question: customQuestionMultiple.values
-    // }
+
     if(customQuestionType.value === "text"){
         data.answers = customAnswerWritten.value;
     } else {
@@ -122,11 +118,9 @@ function createNextQuestion(){
     //reset form inputs to be empty
     // display updated quiz
     newQuiz.push(data);
-    console.log(newQuiz);
 }
 
 // check if user wants to make a custom trivia quiz
-
 async function prepareQuiz(quiz){
     let isCustom = quizType.checked;
     let triviaObj = {
@@ -135,12 +129,10 @@ async function prepareQuiz(quiz){
         quiz: [],
     };
     if(!isCustom){
-        console.log('generated quiz')
         let request;
         if(quizDifficulty.value === "mixed"){
             request = await axios.get(`https://opentdb.com/api.php?amount=${questionTotal.value}`);
-            console.log('mixed: ', request.data);
-            triviaObj.quiz = request.data.results;
+            triviaObj.quiz = formatResponse(request.data.results);
         } else {
             request = await axios.get(`https://opentdb.com/api.php?amount=${questionTotal.value}&difficulty=${quizDifficulty.value}`);
             triviaObj.quiz = request.data.results;
@@ -150,10 +142,34 @@ async function prepareQuiz(quiz){
     }
     return triviaObj;
 }
-// let isCustom = quizType.checked;
+
+function formatResponse(questions){
+    let result = [];
+    for(let i = 0; i < questions.length; i++){
+        let question = {
+            question: questions[i].question,
+            type: questions[i].type,
+            difficulty: questions[i].difficulty,
+            answers: []
+        }
+    //combine correct and incorrect answers into one answer array
+        question.answers.push({
+            answer: questions[i].correct_answer,
+            isCorrect: true,
+        });
+        questions[i].incorrect_answers.forEach((item) => {
+            question.answers.push({
+                answer: item,
+                isCorrect: false,
+            });
+        });
+        result.push(question);
+    }
+    return result;
+}
+
 quizSubmit.addEventListener('click', async (e) => {
     let quiz = await prepareQuiz(newQuiz);
-    // console.log(quiz);
     try{
         //save generated quiz to database
         await axios.request({
@@ -167,5 +183,11 @@ quizSubmit.addEventListener('click', async (e) => {
         console.log(err);
     }
 });
+
+//display created quiz
+
+function renderQuiz(quiz){
+    
+}
 
 
