@@ -95,7 +95,10 @@ function createNextQuestion(){
         customAnswerWritten = document.getElementById('custom_question_answer'),
         questionDifficulty = document.getElementById('custom_question_difficulty'),
         isCorrectAnswer = document.querySelectorAll('.isCorrect');
-
+    // custom question form formatting
+    if(customQuestion.value === "" || customQuestionType.value === "" || customAnswerWritten.value === ""){
+        console.log('empty something or another');
+    }
     let data = {
         question: customQuestion.value,
         type: customQuestionType.value,
@@ -103,6 +106,7 @@ function createNextQuestion(){
     }
 
     if(customQuestionType.value === "text"){
+        // add ability to add multiple acceptable answers handle that here
         data.answers = customAnswerWritten.value;
     } else {
         let answers = [];
@@ -128,6 +132,11 @@ async function prepareQuiz(quiz){
         difficulty: quizDifficulty.value,
         quiz: [],
     };
+    if(quizName.value === ""){
+        console.log('empty name');
+        return "Please enter a quiz name";
+    }
+    
     if(!isCustom){
         let request;
         if(quizDifficulty.value === "mixed"){
@@ -170,15 +179,21 @@ function formatResponse(questions){
 
 quizSubmit.addEventListener('click', async (e) => {
     let quiz = await prepareQuiz(newQuiz);
+    // handle form input errors eg: no name, no questions, etc
+    if(typeof quiz !== "object"){
+        // set error message
+        return;
+    }
     try{
         //save generated quiz to database
-        await axios.request({
-            method: "post",
-            url: "/new/quiz",
-            data: quiz,
-        }).then((res) => {
-            quizList.push({id: res.data, title: quiz.title, length: quiz.quiz.length});
-        });
+        // await axios.request({
+        //     method: "post",
+        //     url: "/new/quiz",
+        //     data: quiz,
+        // }).then((res) => {
+        //     quizList.push({id: res.data, title: quiz.title, length: quiz.quiz.length});
+        // });
+        renderQuiz(quiz);
     } catch(err){
         console.log(err);
     }
@@ -187,7 +202,40 @@ quizSubmit.addEventListener('click', async (e) => {
 //display created quiz
 
 function renderQuiz(quiz){
-    
+    const quizDisplay = document.getElementById('created_quiz_display'),
+          quizName = document.getElementById('created_quiz_name'),
+          quizDifficulty = document.getElementById('created_quiz_difficulty');
+    let result = [];
+    quizName.innerText = quiz.title;
+    quizDifficulty.innerText = quiz.difficulty;
+    displayQuestion(quiz.quiz);
+}
+
+function displayQuestion(questions){
+    const quizQuestions = document.getElementById('created_quiz_questions');
+
+    for(let i = 0; i < questions.length; i++){
+        let container = document.createElement('li'),
+            header = document.createElement('h2'),
+            li = document.createElement('li');
+            header.innerText = `${questions[i].question}`
+            quizQuestions.appendChild(header);
+            quizQuestions.appendChild(displayAnswers(questions[i].answers));
+    }
+}
+
+function displayAnswers(answers){
+    console.log(answers);
+    let container = document.createElement('ul');
+
+    for(let i = 0; i < answers.length; i++){
+        let li = document.createElement('li');
+        li.innerText = answers[i].answer;
+        // check if it's the correct answer and add a correct answer class 
+        container.appendChild(li);
+
+    }
+    return container;
 }
 
 
