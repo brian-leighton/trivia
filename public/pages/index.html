@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Quiz Creation</h1>
+    <h1 class="u-center-text">Quiz Creation</h1>
     <!-- created quiz display -->
     <div id="created_quiz_display">
         <h1 id="created_quiz_name"></h1>
@@ -18,81 +18,87 @@
 
         </ul>
     </div>
-    <div class="form-check form-switch">
-        <label class="form-check-label" for="quiz_type">Create custom questions?</label>
-        <input class="form-check-input" type="checkbox" name="quiz_type" id="quiz_type">
+    <div>
+        <label class="u-center-text" for="quiz_name">Name your Quiz</label>
+        <input type="text" id="quiz_name">
+        <div class="form-check form-switch">
+            <label class="form-check-label" for="quiz_type">Make your own questions?</label>
+            <input class="form-check-input" type="checkbox" name="quiz_type" id="quiz_type">
+        </div>
     </div>
     <!-- Dynamically display the right form based on the user input -->
-    <form action="/trivia" id="triviaCreate">
-        <div>
-            <label for="quiz_name">Name your Quiz</label>
-            <input type="text" id="quiz_name">
-        </div>
-        <div class="" id="generated_quiz">
-            <h1>Generated Quiz Settings</h1>
-            <div>
-                <label for="question_total">How Many Questions?</label>
-                <select name="" id="question_total"></select>
-            </div>
-            <div>
-                <label for="quiz_difficulty">How difficult?</label>
-                <select name="quiz_difficulty" id="quiz_difficulty">
-                    <option value="mixed">Any difficulty</option>
+    <form action="/trivia" id="triviaCreate" class="form__main">
+        <div class="form">
+            <div class="hidden" id="custom_quiz">
+                <h1>Custom Question</h1>
+                <h5 for="custom_question_type">Multiple Choice, or written answer?</h5>
+                <select name="custom_question_type" id="custom_question_type">
+                    <option value="multiple">Multiple Choice</option>
+                    <option value="text">Written</option>
+                </select>
+                <div class="form-floating">
+                    <input class="form-control" type="text" placeholder="placeholder text" id="floatingInput custom_question">
+                    <label for="floatingInput">Enter your custom Question</label>
+                </div>
+                <h5 for="custom_question_difficulty">How hard is this question?</h5>
+                <select name="custom_question_difficulty" id="custom_question_difficulty">
+                    <!-- <option selected value="mixed">Select a difficulty</option> -->
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
                 </select>
-            </div>
-        </div>
-        <div class="hidden" id="custom_quiz">
-            <h1>Custom Question Quiz</h1>
-            <label for="custom_question_type">Multiple Choice, or written answer?</label>
-            <select name="custom_question_type" id="custom_question_type">
-                <option value="multiple">Multiple Choice</option>
-                <option value="text">Written</option>
-            </select>
-            <div class="form-floating mb-3">
-                <label for="floatingInput">Enter your custom Question</label>
-                <input class="form-control" type="text" id="floatingInput custom_question">
-            </div>
-            <label for="custom_question_difficulty">How hard is this question?</label>
-            <select name="custom_question_difficulty" id="custom_question_difficulty">
-                <!-- <option selected value="mixed">Select a difficulty</option> -->
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-            <!-- Written option inputs -->
-            <div id="custom_question_written" class="hidden">
-                <label for="custom_question_answer">What's the answer?</label>
-                <input type="text" id="custom_question_answer">
-            </div>
-            <!-- Multiple Choice option inputs -->
-            <div id="custom_question_multiple-container" class="">
-                <!-- Total answer choices -->
-                <label for="custom_question_multiple_total">How many answer choices?</label>
-                <select name="custom_question_multiple_total" id="custom_question_multiple_total">
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <!-- Multiple Choice Answer Section -->
-                <label for="custom_question_multiple_answers">Add your answers</label>
-                <div id="custom_question_multiple_answers">
-                    <div class="multipleChoice__answer">
-                        <input type="text" class="multipleChoice__option">
-                        <label for="f">Is this the correct answer?</label>
-                        <input type="radio" name="isCorrect" class="isCorrect">
+                <!-- Written option inputs -->
+                <div id="custom_question_written" class="hidden form-floating">
+                    <input type="text" class="form-control" id="custom_question_answer" placeholder="placeholder text">
+                    <label for="custom_question_answer">What's the answer?</label>
+                </div>
+                <!-- Multiple Choice option inputs -->
+                <div id="custom_question_multiple-container" class="">
+                    <!-- Multiple Choice Answer Section -->
+                    <h3 for="custom_question_multiple_answers">Add your answers</h3>
+                    <!-- Total answer choices -->
+                    <h5 for="custom_question_multiple_total">How many answer choices?</h5>
+                    <select name="custom_question_multiple_total" id="custom_question_multiple_total">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <h1></h1>
+                    <div id="custom_question_multiple_answers">
+                        <div class="multipleChoice__answer input-group">
+                            <div class="input-group-text">
+                                <input type="radio" name="isCorrect" class="isCorrect">
+                            </div>
+                            <input type="text" class="multipleChoice__option form-control">
+                        </div>
+                        <div class="multipleChoice__answer input-group">
+                            <div class="input-group-text">
+                                <input type="radio" name="isCorrect" class="isCorrect">
+                            </div>
+                            <input type="text" class="multipleChoice__option form-control">
+                        </div>
                     </div>
-                    <div class="multipleChoice__answer">
-                        <input type="text" class="multipleChoice__option">
-                        <label for="isCorrect">Is this the correct answer?</label>
-                        <input type="radio" name="isCorrect" class="isCorrect">
-                    </div>
+                    <h6 class="u-left-text">*Please indicate the correct answer by using the buttons on the left</h6>
+                </div>
+                <div id="next_question">
+                    Next Question
                 </div>
             </div>
-            <div id="next_question">
-                Next Question
+            <div class="form__sub" id="generated_quiz">
+                <h1 class="u-center-text">Generated Quiz Settings</h1>
+                <div>
+                    <h5 for="question_total">How Many Questions?</h5>
+                    <select name="" id="question_total"></select>
+                </div>
+                <div>
+                    <h5 for="quiz_difficulty">How difficult?</h5>
+                    <select name="quiz_difficulty" id="quiz_difficulty">
+                        <option value="mixed">Any difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
             </div>
         </div>
         <div id="quiz_submit">Create Quiz</div>

@@ -82,8 +82,8 @@ function renderAnswerInput(index) {
     inputRadio.type = "radio";
     inputRadio.name = "isCorrect";
     label.innerText = "Is this the correct answer?";
-    div.appendChild(label);
     div.appendChild(inputRadio);
+    div.appendChild(label);
     return div;
 }
 
