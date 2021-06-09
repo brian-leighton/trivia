@@ -18,19 +18,19 @@
 
         </ul>
     </div>
-    <div>
-        <label class="u-center-text" for="quiz_name">Name your Quiz</label>
-        <input type="text" id="quiz_name">
-        <div class="form-check form-switch">
-            <label class="form-check-label" for="quiz_type">Make your own questions?</label>
-            <input class="form-check-input" type="checkbox" name="quiz_type" id="quiz_type">
-        </div>
-    </div>
     <!-- Dynamically display the right form based on the user input -->
     <form action="/trivia" id="triviaCreate" class="form__main">
+        <div>
+            <div class="form-check form-switch">
+                <label class="form-check-label" for="quiz_type">Make your own questions?</label>
+                <input class="form-check-input" type="checkbox" name="quiz_type" id="quiz_type">
+            </div>
+            <label class="u-center-text" for="quiz_name">Name your Quiz</label>
+            <input type="text" id="quiz_name">
+        </div>
         <div class="form">
             <div class="hidden" id="custom_quiz">
-                <h1>Custom Question</h1>
+                <h2>Custom Question</h2>
                 <h5 for="custom_question_type">Multiple Choice, or written answer?</h5>
                 <select name="custom_question_type" id="custom_question_type">
                     <option value="multiple">Multiple Choice</option>
@@ -38,7 +38,7 @@
                 </select>
                 <div class="form-floating">
                     <input class="form-control" type="text" placeholder="placeholder text" id="floatingInput custom_question">
-                    <label for="floatingInput">Enter your custom Question</label>
+                    <label for="floatingInput">Enter your Question</label>
                 </div>
                 <h5 for="custom_question_difficulty">How hard is this question?</h5>
                 <select name="custom_question_difficulty" id="custom_question_difficulty">
@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="form__sub" id="generated_quiz">
-                <h1 class="u-center-text">Generated Quiz Settings</h1>
+                <h3 class="u-center-text">Generated Quiz Settings</h3>
                 <div>
                     <h5 for="question_total">How Many Questions?</h5>
                     <select name="" id="question_total"></select>

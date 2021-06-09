@@ -69,21 +69,23 @@ customQuestionMultipleTotal.addEventListener('change', (e) => {
 //renders the multiple choice answer input component
 function renderAnswerInput(index) {
     const div = document.createElement('div');
+    const inputDiv = document.createElement('div');
     const inputText = document.createElement('input');
     const label = document.createElement('label');
     const inputRadio = document.createElement('input');
 
     div.classList.add("multipleChoice__answer");
+    div.classList.add("input-group");
     inputText.classList.add('multipleChoice__option');
+    inputText.classList.add('form-control');
     inputRadio.classList.add('isCorrect');
-    div.appendChild(inputText);
-    label.htmlFor = `checkbox-${index}`;
     inputRadio.id = `checkbox-${index}`;
     inputRadio.type = "radio";
     inputRadio.name = "isCorrect";
-    label.innerText = "Is this the correct answer?";
-    div.appendChild(inputRadio);
-    div.appendChild(label);
+    inputDiv.classList.add('input-group-text');
+    inputDiv.appendChild(inputRadio);
+    div.appendChild(inputDiv);
+    div.appendChild(inputText);
     return div;
 }
 
