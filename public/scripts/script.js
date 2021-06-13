@@ -1,12 +1,12 @@
 //Element Variable List
 const triviaCreate = document.getElementById('triviaCreate'),
       quizType = document.getElementById("quiz_type"),
+      quizTypeLabel = document.getElementById('quiz_type_label'),
       quizSubmit = document.getElementById('quiz_submit'),
       generatedQuiz = document.getElementById('generated_quiz'),
       questionTotal = document.getElementById('question_total'),
       quizName = document.getElementById('quiz_name'),
       customQuiz = document.getElementById('custom_quiz'),
-      customQuestion = document.getElementById('custom_question'),
       customQuestionType = document.getElementById('custom_question_type'),
       customQuestionWritten = document.getElementById('custom_question_written'),
       customQuestionMultipleContainer = document.getElementById('custom_question_multiple-container'),
@@ -43,6 +43,11 @@ function renderOptionList(max){
 quizType.addEventListener('click', (e) => {
     customQuiz.classList.toggle("hidden");
     generatedQuiz.classList.toggle("hidden");
+    if(quizType.checked === false){
+        quizTypeLabel.innerText = "Custom Questions?"
+    } else {
+        quizTypeLabel.innerText = "Generated Questions?"
+    }
 });
 
 
@@ -92,15 +97,19 @@ function renderAnswerInput(index) {
 //Quiz creation form handlers/functions
 let newQuiz = [];
 nextQuestion.addEventListener('click', () => createNextQuestion());
+
 function createNextQuestion(){
     let customAnswerMultiple = document.querySelectorAll('.multipleChoice__option'),
-        customAnswerWritten = document.getElementById('custom_question_answer'),
-        questionDifficulty = document.getElementById('custom_question_difficulty'),
-        isCorrectAnswer = document.querySelectorAll('.isCorrect');
+    customAnswerWritten = document.getElementById('custom_question_answer'),
+    questionDifficulty = document.getElementById('custom_question_difficulty'),
+    customQuestion = document.querySelector('#custom_question');
+    const isCorrectAnswer = document.querySelectorAll('.isCorrect');
     // custom question form formatting
-    if(customQuestion.value === "" || customQuestionType.value === "" || customAnswerWritten.value === ""){
-        console.log('empty something or another');
-    }
+    if(customQuestion.value === "" || customQuestionType.value === ""){
+        // set error message to reflect something was left empty
+            console.log('empty something or another');
+            return;
+        }
     let data = {
         question: customQuestion.value,
         type: customQuestionType.value,
@@ -109,7 +118,7 @@ function createNextQuestion(){
 
     if(customQuestionType.value === "text"){
         // add ability to add multiple acceptable answers handle that here
-        data.answers = customAnswerWritten.value;
+        data.answers = customAnswerWritten.value.split("~").filter(s => s);
     } else {
         let answers = [];
         for(let i = 0; i < customAnswerMultiple.length; i++){
@@ -124,6 +133,7 @@ function createNextQuestion(){
     //reset form inputs to be empty
     // display updated quiz
     newQuiz.push(data);
+    prepareQuiz(newQuiz);
 }
 
 // check if user wants to make a custom trivia quiz
@@ -135,7 +145,6 @@ async function prepareQuiz(quiz){
         quiz: [],
     };
     if(quizName.value === ""){
-        console.log('empty name');
         return "Please enter a quiz name";
     }
     
@@ -151,6 +160,8 @@ async function prepareQuiz(quiz){
     } else {
         triviaObj.quiz = quiz;
     }
+    // render the quiz as it is currently set
+    renderQuiz(triviaObj);
     return triviaObj;
 }
 
@@ -187,14 +198,14 @@ quizSubmit.addEventListener('click', async (e) => {
         return;
     }
     try{
-        //save generated quiz to database
-        // await axios.request({
-        //     method: "post",
-        //     url: "/new/quiz",
-        //     data: quiz,
-        // }).then((res) => {
-        //     quizList.push({id: res.data, title: quiz.title, length: quiz.quiz.length});
-        // });
+        // save generated quiz to database
+        await axios.request({
+            method: "post",
+            url: "/new/quiz",
+            data: quiz,
+        }).then((res) => {
+            quizList.push({id: res.data, title: quiz.title, length: quiz.quiz.length});
+        });
         renderQuiz(quiz);
     } catch(err){
         console.log(err);
@@ -208,6 +219,7 @@ function renderQuiz(quiz){
           quizName = document.getElementById('created_quiz_name'),
           quizDifficulty = document.getElementById('created_quiz_difficulty');
     let result = [];
+    // console.log('render', quiz);
     quizName.innerText = quiz.title;
     quizDifficulty.innerText = quiz.difficulty;
     displayQuestion(quiz.quiz);
@@ -215,24 +227,34 @@ function renderQuiz(quiz){
 
 function displayQuestion(questions){
     const quizQuestions = document.getElementById('created_quiz_questions');
-
+    // clear questions already rendered so you don't have duplicated question/answers
+    quizQuestions.innerHTML = "";
     for(let i = 0; i < questions.length; i++){
         let container = document.createElement('li'),
-            header = document.createElement('h2'),
+            header = document.createElement('h4'),
             li = document.createElement('li');
             header.innerText = `${questions[i].question}`
             quizQuestions.appendChild(header);
-            quizQuestions.appendChild(displayAnswers(questions[i].answers));
+            // console.log(typeof questions[i].answers);
+            // for written question answers
+            if(typeof questions[i].answers === "string"){
+                //filter will remove the empty string at the end of the split array because an empty string ("") is falsy 
+                quizQuestions.appendChild(displayAnswers(questions[i].answers.split("~").filter(s => s)));
+            } else {
+                quizQuestions.appendChild(displayAnswers(questions[i].answers));
+            }
+            // customQuestionType.value === "multiple" ?
+                //  quizQuestions.appendChild(displayAnswer(questions[i].answers))
+            
     }
 }
 
 function displayAnswers(answers){
-    console.log(answers);
+    // console.log(answers.length);
     let container = document.createElement('ul');
-
     for(let i = 0; i < answers.length; i++){
         let li = document.createElement('li');
-        li.innerText = answers[i].answer;
+        li.innerText = answers[i].answer || answers[i];
         // check if it's the correct answer and add a correct answer class 
         container.appendChild(li);
 

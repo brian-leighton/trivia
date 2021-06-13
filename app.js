@@ -30,7 +30,7 @@ io.on('connection', async(socket) => {
 
 require('./routes/trivia')(app);
 //PAGES
-app.get("/", (req, res) => {
+app.get("/create", (req, res) => {
     res.sendFile(path.resolve('public/pages', 'index.html'));
 });
 app.get("/trivia/:id", (req, res) => {

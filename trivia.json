@@ -1,144 +1,30 @@
 {
-    "2303": {
-        "title": "",
+    "8495": {
+        "title": "quiz",
         "difficulty": "mixed",
         "quiz": [
             {
-                "question": "Who is the main character of &quot;Metal Gear Solid 3&quot;?",
-                "type": "multiple",
-                "difficulty": "medium",
-                "answers": [
-                    {
-                        "answer": "Naked Snake",
-                        "isCorrect": true
-                    },
-                    {
-                        "answer": "Solid Snake",
-                        "isCorrect": false
-                    },
-                    {
-                        "answer": "Liquid Snake",
-                        "isCorrect": false
-                    },
-                    {
-                        "answer": "Venom Snake",
-                        "isCorrect": false
-                    }
-                ]
-            },
-            {
-                "question": "How many countries does the United States share a land border with?",
+                "question": "multi choice",
                 "type": "multiple",
                 "difficulty": "easy",
                 "answers": [
                     {
-                        "answer": "2",
+                        "answer": "a",
                         "isCorrect": true
                     },
                     {
-                        "answer": "1",
-                        "isCorrect": false
-                    },
-                    {
-                        "answer": "3",
-                        "isCorrect": false
-                    },
-                    {
-                        "answer": "4",
+                        "answer": "b",
                         "isCorrect": false
                     }
                 ]
             },
             {
-                "question": "Human cells typically have how many copies of each gene?",
-                "type": "multiple",
+                "question": "Written",
+                "type": "text",
                 "difficulty": "easy",
                 "answers": [
-                    {
-                        "answer": "2",
-                        "isCorrect": true
-                    },
-                    {
-                        "answer": "1",
-                        "isCorrect": false
-                    },
-                    {
-                        "answer": "4",
-                        "isCorrect": false
-                    },
-                    {
-                        "answer": "3",
-                        "isCorrect": false
-                    }
-                ]
-            },
-            {
-                "question": "In Undertale, how much do Spider Donuts cost in Hotland?",
-                "type": "multiple",
-                "difficulty": "medium",
-                "answers": [
-                    {
-                        "answer": "9999G",
-                        "isCorrect": true
-                    },
-                    {
-                        "answer": "7G",
-                        "isCorrect": false
-                    },
-                    {
-                        "answer": "40G",
-                        "isCorrect": false
-                    },
-                    {
-                        "answer": "12G",
-                        "isCorrect": false
-                    }
-                ]
-            },
-            {
-                "question": "What was the soft drink Pepsi originally introduced as?",
-                "type": "multiple",
-                "difficulty": "medium",
-                "answers": [
-                    {
-                        "answer": "Brad&#039;s Drink",
-                        "isCorrect": true
-                    },
-                    {
-                        "answer": "Pepsin Pop",
-                        "isCorrect": false
-                    },
-                    {
-                        "answer": "Carolina Cola",
-                        "isCorrect": false
-                    },
-                    {
-                        "answer": "Pepsin Syrup",
-                        "isCorrect": false
-                    }
-                ]
-            },
-            {
-                "question": "What is the unit of electrical capacitance?",
-                "type": "multiple",
-                "difficulty": "medium",
-                "answers": [
-                    {
-                        "answer": "Farad",
-                        "isCorrect": true
-                    },
-                    {
-                        "answer": "Gauss",
-                        "isCorrect": false
-                    },
-                    {
-                        "answer": "Henry",
-                        "isCorrect": false
-                    },
-                    {
-                        "answer": "Watt",
-                        "isCorrect": false
-                    }
+                    "w",
+                    "e"
                 ]
             }
         ]

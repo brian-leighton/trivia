@@ -17,12 +17,14 @@ body{
         border: 1px solid #9d9d9d;
         border-radius: 5px;
         max-width: 50%;
+        min-width: 25rem;
         margin: 0 auto;
         text-align: center;
         padding: .5rem;
         // min-width: 100vw;
         @include mq("phone"){
             max-width: 100%;
+            min-width: 100%;
         }
     }
     &__sub{
@@ -30,7 +32,16 @@ body{
         width: 100%;
         top: 0;
     }
-
+    &-switch{
+        margin-bottom: 2rem;
+        & label{
+            text-align: left;
+            display: block;
+        }
+        & input{
+            // margin-left: 2rem;
+        }
+    }
 }
 
 .multipleChoice{
@@ -67,5 +78,5 @@ body{
 }
 #custom_question{
     max-width: 25rem;
-    background: blue;
+    // background: blue;
 }
