@@ -1,8 +1,14 @@
-@import "base/utilities.scss";
 @import "base/base.scss";
+@import "base/utilities.scss";
+@import "base/variables.scss";
+@import "base/typography.scss";
+@import "components/buttons.scss";
+@import "components/lists.scss";
+@import "pages/home.scss";
+@import "pages/triviaHome.scss";
 
 body{
-    background: blueviolet;
+    background: $color-secondary;
 }
 
 .hidden{

@@ -1,0 +1,21 @@
+.list{
+    list-style: none;
+    font-family: $font-secondary;
+    width: 80%;
+    margin: 0 auto;
+    &__item{
+        &:first-of-type{
+            border-top: 1px solid $color-grey;
+            border-left: 1px solid $color-grey;
+            border-right: 1px solid $color-grey;
+            border-bottom: none;
+        }
+        &:last-of-type{
+            border-bottom: 1px solid $color-grey;
+            border-left: 1px solid $color-grey;
+            border-right: 1px solid $color-grey;
+            border-top: none;
+        }
+        border: 1px solid $color-grey;
+    }
+}

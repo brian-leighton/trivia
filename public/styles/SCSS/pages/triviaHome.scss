@@ -1,0 +1,10 @@
+#quizList{
+    background: $color-tertiary;
+    border: 1px solid $color-grey;
+    width: 80%;
+    margin: 4rem auto 0 auto;
+    min-height: 2rem;
+    @include mq("phone"){
+        width: 100%;
+    }
+}

@@ -1,0 +1,42 @@
+.btn{
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    text-decoration: none;
+    font-family: $font-primary;
+    font-size: 1rem;
+    font-weight: 700;
+
+    &__primary{
+        color: white;
+        background: #0D6EFD;
+        &:hover{
+            background: #0B5ED7;
+            color: #DAE7F9;
+        }
+    }
+    &__secondary{
+        color: white;
+        background: #198754;
+        &:hover{
+            background: #157347;
+            color: #DAE7F9;
+        }
+    }
+    &__tertiary{
+        color: $color-primary;
+        background: $color-tertiary;
+        border: 2px solid $color-primary;
+        transition: all .4s ease;
+        &:hover{
+            background: $color-primary;
+            color: $color-tertiary;
+            border: 2px solid $color-tertiary;
+        }
+    }
+    &__small{
+        
+    }
+    &__large{
+        font-size: 1.2rem;
+    }
+}

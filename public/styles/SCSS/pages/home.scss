@@ -1,0 +1,69 @@
+.landing{
+    position: relative;
+    height:  100vh;
+
+    & > div:first-of-type{
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__controls{
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        bottom: 35vh;
+        width: 100%;
+
+        @include mq("small"){
+            & > div{
+                flex: 1;
+            }
+        }
+
+    }
+}
+.logo {
+    max-width: 30rem;
+    
+    @include mq("phone"){
+        max-width: 12rem;
+    }
+
+    &__container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .8rem 0 .8rem 0;
+        animation: logo .8s ease-in forwards;
+
+        @include mq("phone"){
+            animation: logo-phone .8s ease-in forwards;
+        }
+    }
+}
+
+// logo animation on page load
+@keyframes logo{
+    0%{
+        transform: scale(0.3);
+    }
+    80%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(.8);
+    }
+}
+
+@keyframes logo-phone{
+    0%{
+        transform: scale(0.3);
+    }
+    80%{
+        transform: scale(.9);
+    }
+    100%{
+        transform: scale(0.8);
+    }
+}

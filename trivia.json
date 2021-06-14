@@ -1,30 +1,103 @@
 {
-    "8495": {
-        "title": "quiz",
+    "1785": {
+        "title": "This is a custom quiz",
         "difficulty": "mixed",
         "quiz": [
             {
-                "question": "multi choice",
+                "question": "The first question",
                 "type": "multiple",
-                "difficulty": "easy",
+                "difficulty": "hard",
                 "answers": [
                     {
-                        "answer": "a",
+                        "answer": "The non-answer answer",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "The answer",
                         "isCorrect": true
                     },
                     {
-                        "answer": "b",
+                        "answer": "Clearly wrong answer",
                         "isCorrect": false
                     }
                 ]
             },
             {
-                "question": "Written",
-                "type": "text",
-                "difficulty": "easy",
+                "question": "Need to reset the question and answer fields on new question",
+                "type": "multiple",
+                "difficulty": "hard",
                 "answers": [
-                    "w",
-                    "e"
+                    {
+                        "answer": "The non-answer answer",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "The answer",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Clearly wrong answer",
+                        "isCorrect": false
+                    }
+                ]
+            }
+        ]
+    },
+    "3776": {
+        "title": "Britas Quiz",
+        "difficulty": "mixed",
+        "quiz": [
+            {
+                "question": "How many licks?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "3",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "3",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Is it that many?",
+                "type": "text",
+                "difficulty": "medium",
+                "answers": [
+                    "123123",
+                    "123123"
+                ]
+            }
+        ]
+    },
+    "9633": {
+        "title": "A new quiz",
+        "difficulty": "mixed",
+        "quiz": [
+            {
+                "question": "This album, now considered to be one of the greatest of all time, was a commercial failure when it was released.",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "The Velvet Underground and Nico",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Abbey Road",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Led Zeppelin IV",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Pet Sounds",
+                        "isCorrect": false
+                    }
                 ]
             }
         ]

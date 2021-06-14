@@ -30,8 +30,14 @@ io.on('connection', async(socket) => {
 
 require('./routes/trivia')(app);
 //PAGES
-app.get("/create", (req, res) => {
-    res.sendFile(path.resolve('public/pages', 'index.html'));
+app.get("/", (req, res) => {
+    res.sendFile(path.resolve('public/pages', "index.html"));
+});
+app.get("/trivia", (req, res) => {
+    res.sendFile(path.resolve('public/pages', "showTrivia.html"));
+})
+app.get("/trivia/new", (req, res) => {
+    res.sendFile(path.resolve('public/pages', 'createTrivia.html'));
 });
 app.get("/trivia/:id", (req, res) => {
     res.sendFile(path.resolve('public/pages', 'trivia.html')); 
