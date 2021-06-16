@@ -1,6 +1,6 @@
 @import "base/base.scss";
-@import "base/utilities.scss";
 @import "base/variables.scss";
+@import "base/utilities.scss";
 @import "base/typography.scss";
 @import "components/buttons.scss";
 @import "components/lists.scss";
@@ -8,7 +8,7 @@
 @import "pages/triviaHome.scss";
 
 body{
-    background: $color-secondary;
+    background: $color-tertiary;
 }
 
 .hidden{

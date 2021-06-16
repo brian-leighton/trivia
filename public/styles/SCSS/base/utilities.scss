@@ -26,10 +26,10 @@
     transform: translate(-50%, -50%);
 }
 .u-background-primary{
-    background: blueviolet;
+    background: $color-primary;
 }
 .u-background-secondary{
-
+    background-color: $color-secondary;
 }
 .flex{
     display: flex;

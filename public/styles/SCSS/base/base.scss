@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
 $breakpoints: (
     phone: 28em,
     small:40em,

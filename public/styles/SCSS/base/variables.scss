@@ -6,3 +6,8 @@ $color-secondary-2: #5cdb95;
 $color-secondary-3: #8ee4af;
 $color-tertiary: #edf5e1;   
 $color-grey: #dee2e6;
+$color-grey-dark: #303030;
+
+$gradient-primary: linear-gradient(to right bottom, 
+                                    rgba($color-primary, 1),
+                                    rgba($color-secondary-3, .6));

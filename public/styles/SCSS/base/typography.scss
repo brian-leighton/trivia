@@ -7,4 +7,13 @@
     &__white{
         color: $color-tertiary;
     }
+    &--jumbo{
+        font-size: 4rem;
+        width: 60%;
+        margin: 0 auto;
+        @include mq('phone'){
+            font-size: 2rem;
+            width: 100%;
+        }
+    }
 }

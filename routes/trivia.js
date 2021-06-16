@@ -24,9 +24,10 @@ module.exports = (app) => {
         try{
             let data = [];
             response = await db.getData("/");
+            console.log(response)
             //loop through each quiz in database 
             for(let key in response){
-                data.push({id: parseInt(key), title: response[key].title, length: response[key].quiz.length })
+                data.push({id: parseInt(key), difficulty: response[key].difficulty, title: response[key].title, length: response[key].quiz.length })
             }
             res.send(data); 
         } catch(err){

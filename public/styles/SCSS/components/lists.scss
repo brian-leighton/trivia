@@ -3,19 +3,61 @@
     font-family: $font-secondary;
     width: 80%;
     margin: 0 auto;
+    //quiz list background colors
+    &__quiz{
+        background-color: $color-tertiary;
+        margin-top:.5rem;
+
+    }
+    @include mq('phone'){
+        width: 100%;
+    }
+
     &__item{
+        border: 1px solid $color-grey;
+        padding: .45rem 1rem;
+
         &:first-of-type{
-            border-top: 1px solid $color-grey;
-            border-left: 1px solid $color-grey;
-            border-right: 1px solid $color-grey;
             border-bottom: none;
         }
         &:last-of-type{
-            border-bottom: 1px solid $color-grey;
-            border-left: 1px solid $color-grey;
-            border-right: 1px solid $color-grey;
             border-top: none;
         }
-        border: 1px solid $color-grey;
+
+        &--index{
+            background: $gradient-primary;
+            border: 1px solid $gradient-primary;
+            color: $color-grey;
+            font-size: 1.6rem;
+            font-weight: 700;
+            font-family: $font-primary;
+            border-radius: 2px 50% 50% 50%;
+            min-width: 2.5rem;
+            height: 2.5rem;
+            text-align: center;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__body{
+        display: flex;
+        // justify-content: space-around;
+        flex: 1 0 100%;
+        & span{
+            margin-right: .75rem;
+        }
+        & a {
+            margin-left: auto;
+            align-self: center;
+            text-decoration: none;
+            color: $color-primary;
+            font-size: 3rem;
+            padding: 0 2rem;
+
+            &:hover{
+                color: $color-secondary;
+            }
+        }
     }
 }
