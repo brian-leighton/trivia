@@ -12,6 +12,18 @@ a {
   text-align: center;
 }
 
+.u-color-primary {
+  color: #05386b;
+}
+
+.u-color-secondary {
+  color: #379683;
+}
+
+.u-color-grey {
+  color: #303030;
+}
+
 .u-left-text {
   width: 80%;
   text-align: left;
@@ -111,6 +123,12 @@ a {
 .heading {
   font-family: "PT Sans", sans-serif;
 }
+.heading__primary {
+  color: #05386b;
+}
+.heading__secondary {
+  color: #379683;
+}
 .heading__white {
   color: #edf5e1;
 }
@@ -172,7 +190,9 @@ a {
   margin: 0 auto;
 }
 .list__quiz {
+  overflow: hidden;
   background-color: #edf5e1;
+  border-radius: 5px;
   margin-top: 0.5rem;
 }
 @media (max-width: 28em) {
@@ -181,18 +201,19 @@ a {
   }
 }
 .list__item {
-  border: 1px solid #dee2e6;
+  border: 1px solid #303030;
   padding: 0.45rem 1rem;
 }
 .list__item:first-of-type {
+  border-radius: 5px 5px 0 0;
   border-bottom: none;
 }
 .list__item:last-of-type {
+  border-radius: 0 0 5px 5px;
   border-top: none;
 }
 .list__item--index {
   background: linear-gradient(to right bottom, #05386b, rgba(142, 228, 175, 0.6));
-  border: 1px solid linear-gradient(to right bottom, #05386b, rgba(142, 228, 175, 0.6));
   color: #dee2e6;
   font-size: 1.6rem;
   font-weight: 700;

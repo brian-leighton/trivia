@@ -31,8 +31,8 @@ function renderList(list){
         link.href= `/trivia/${list[i].id}`;
         // create and add children
         body.appendChild(createEle('span', i + 1 , 'list__item--index'));
-        info.appendChild(createEle('h3', list[i].title, []));
-        info.appendChild(createEle('h6', `${list[i].length} Questions - ${list[i].difficulty}`, []));
+        info.appendChild(createEle('h3', list[i].title, ['heading', 'u-color-grey']));
+        info.appendChild(createEle('h6', `${list[i].length} Questions - ${list[i].difficulty}`, 'u-color-primary'));
         body.appendChild(info);
         body.appendChild(link);
         li.appendChild(body);

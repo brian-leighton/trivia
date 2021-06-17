@@ -24,7 +24,6 @@ module.exports = (app) => {
         try{
             let data = [];
             response = await db.getData("/");
-            console.log(response)
             //loop through each quiz in database 
             for(let key in response){
                 data.push({id: parseInt(key), difficulty: response[key].difficulty, title: response[key].title, length: response[key].quiz.length })
@@ -37,7 +36,6 @@ module.exports = (app) => {
     });
 
     app.get("/get/trivia/:id", async(req, res) => {
-        console.log('triviiaaa');
         try{
             let response = await db.getData(`/${req.params.id}`);
             res.send(response);

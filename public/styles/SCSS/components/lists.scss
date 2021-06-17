@@ -5,28 +5,30 @@
     margin: 0 auto;
     //quiz list background colors
     &__quiz{
+        overflow: hidden;
         background-color: $color-tertiary;
+        border-radius: 5px;
         margin-top:.5rem;
-
     }
     @include mq('phone'){
         width: 100%;
     }
-
+    
     &__item{
-        border: 1px solid $color-grey;
+        border: 1px solid $color-grey-dark;
         padding: .45rem 1rem;
 
         &:first-of-type{
+            border-radius: 5px 5px 0 0;
             border-bottom: none;
         }
         &:last-of-type{
+            border-radius: 0 0 5px 5px;
             border-top: none;
         }
 
         &--index{
             background: $gradient-primary;
-            border: 1px solid $gradient-primary;
             color: $color-grey;
             font-size: 1.6rem;
             font-weight: 700;

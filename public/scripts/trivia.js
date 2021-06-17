@@ -21,17 +21,24 @@ function appendMessage(data){
     div.innerText = data;
     messageContainer.append(div);
 }
-// initial chatroom user setup
-const name = prompt("What name are you playing under today?");
+//JOIN ROOM
+const name = prompt("What name are you playing under today?") || "Guest";
+//return the triviaID to be used for socketio room
+const room = () => {
+    const url = window.location.toString().split("/");
+    return url[url.length-1];
+}
 appendMessage("You have connected..");
-socket.emit("new-user", name);
+
+socket.emit("joinRoom", {username: name, room: room()});
 
 // chatroom input submit
 chatSubmit.addEventListener('click', (e) => {
     e.preventDefault();
     let data = {
         user: name,
-        message: chatInput.value
+        message: chatInput.value,
+        room: room(),
     }
     socket.emit("new-chat-message", data);
     appendMessage(`You: ${chatInput.value}`);

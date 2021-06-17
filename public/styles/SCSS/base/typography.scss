@@ -1,8 +1,11 @@
 .heading{
     font-family: $font-primary;
-    
-    &__primary{
 
+    &__primary{
+        color: $color-primary;
+    }
+    &__secondary{
+        color: $color-secondary;
     }
     &__white{
         color: $color-tertiary;
