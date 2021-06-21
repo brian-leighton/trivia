@@ -15,11 +15,13 @@
         }
     }
     &__secondary{
-        color: white;
-        background: #198754;
+        background: $color-tertiary;
+        color: #198754;
+        border: 1px solid #198754;
         &:hover{
             background: #157347;
-            color: #DAE7F9;
+            color: $color-tertiary;
+            border: 1px solid $color-grey-dark;
         }
     }
     &__tertiary{

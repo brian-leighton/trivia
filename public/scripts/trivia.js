@@ -15,14 +15,29 @@ window.onload = async () => {
     quiz = triviaRes.data;
 }
 
+//CHATROOM FUNCTIONALITY
+
 // add chat message to chat board
 function appendMessage(data){
     const div = document.createElement('div');
-    div.innerText = data;
+    console.log(data);
+    div.innerHTML = `<p> ${data}</p>`;
+    div.classList.add("chat__item");
     messageContainer.append(div);
 }
+// Scroll chat baord to bottom on new message if the user hasn't moved their scroll bar
+function scrollDown(){
+    const isScrolledDown = messageContainer.scrollHeight - messageContainer.clientHeight <= messageContainer.scrollTop + 10;
+    //scrolls to the bottom
+    messageContainer.scrollTop = messageContainer.scrollHeight - messageContainer.clientHeight;
+    //fix so it only scrolls when at the bottom
+    if(isScrolledDown){
+        
+    }
+}
 //JOIN ROOM
-const name = prompt("What name are you playing under today?") || "Guest";
+// const name = prompt("What name are you playing under today?") || "Guest";
+const name = "BRIAN";
 //return the triviaID to be used for socketio room
 const room = () => {
     const url = window.location.toString().split("/");
@@ -42,19 +57,23 @@ chatSubmit.addEventListener('click', (e) => {
     }
     socket.emit("new-chat-message", data);
     appendMessage(`You: ${chatInput.value}`);
+    scrollDown();
     chatInput.value = '';
 });
 //handle chatroom events
 socket.on("chat-message", message => {
     appendMessage(`${message.user}: ${message.message}`);
+    scrollDown();
 });
 
 socket.on("new-user", data => {
     appendMessage(`${data} has joined the game.`);
+    scrollDown();
 });
 
 socket.on('disconnect-message', (username) => {
     appendMessage(`${username} has disconnected`);
+    scrollDown();
 });
 
 

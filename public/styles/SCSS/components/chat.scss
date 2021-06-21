@@ -1,0 +1,51 @@
+.chat{
+    background: green;
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    overflow: hidden;
+    &__main{
+        background: blue;
+    }
+    //message container
+    &__messages{
+        height: 15rem;
+        overflow-y: scroll;
+        background: $color-grey;
+    }
+    // indivdual message 
+    &__item{
+        background-color: $color-grey;
+        &:nth-of-type(2n){
+            background-color: darken($color-grey, 10%);
+        }
+        & > p {
+            //remove bootstrap margin on paragraph
+            margin: 0;
+        }
+    }
+    &__hidden{
+        height: 0;
+        visibility: hidden;
+
+        & > * {
+
+        }
+    }
+    //text input and submit button for chat room
+    &__form{
+        display: flex;
+        & > input {
+            color: red;
+            flex: 1 0 80%;
+        }
+        & > button{
+            flex: 0 0 20%;
+        }
+    }
+    &__close{
+
+    }
+}

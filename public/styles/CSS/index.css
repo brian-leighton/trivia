@@ -161,12 +161,14 @@ a {
   color: #DAE7F9;
 }
 .btn__secondary {
-  color: white;
-  background: #198754;
+  background: #edf5e1;
+  color: #198754;
+  border: 1px solid #198754;
 }
 .btn__secondary:hover {
   background: #157347;
-  color: #DAE7F9;
+  color: #edf5e1;
+  border: 1px solid #303030;
 }
 .btn__tertiary {
   color: #05386b;
@@ -183,6 +185,46 @@ a {
   font-size: 1.2rem;
 }
 
+.chat {
+  background: green;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  overflow: hidden;
+}
+.chat__main {
+  background: blue;
+}
+.chat__messages {
+  height: 15rem;
+  overflow-y: scroll;
+  background: #dee2e6;
+}
+.chat__item {
+  background-color: #dee2e6;
+}
+.chat__item:nth-of-type(2n) {
+  background-color: #c1c9d0;
+}
+.chat__item > p {
+  margin: 0;
+}
+.chat__hidden {
+  height: 0;
+  visibility: hidden;
+}
+.chat__form {
+  display: flex;
+}
+.chat__form > input {
+  color: red;
+  flex: 1 0 80%;
+}
+.chat__form > button {
+  flex: 0 0 20%;
+}
 .list {
   list-style: none;
   font-family: "Roboto Mono", monospace;
