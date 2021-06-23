@@ -1,19 +1,120 @@
 .chat{
-    background: green;
-    text-align: right;
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 25%;
+    width: min(32rem, 100%);
     overflow: hidden;
+    font-family:'Noto Sans', sans-serif;
+    //close button
+    &__close{
+        display: flex;
+        justify-content: flex-end;
+        background: $color-primary;
+    }
+    // toggle button to show or hide chat window
+    &__btn{
+        background: $color-red;
+        color: $color-tertiary;
+        padding: .25rem .75rem;
+        cursor: pointer;
+        width: 1rem;
+        height: 1.8rem;
+        position: relative;
+        transition: all 3s;
+
+        &:hover{
+            color: $color-secondary;
+        }
+        & div{
+            //chat window is shown
+            height: .1rem;
+            width: 1.2rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background: $color-grey-dark;
+            transition: all 2s;
+            &::after{
+                content:"";
+                height: .1rem;
+                width: 100%;
+                background: $color-grey-dark;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+            &::before{
+                content:"";
+                visibility: hidden;
+                opacity: 0;
+                transition: all 3s;
+                position: absolute;
+                top: .25rem;
+                left: 50%;
+                height: .1rem;
+                width: 100%;
+            }
+
+        }
+        &--expand > div{
+            // chat window is hidden
+            height: .1rem;
+            width: 1.2rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background: green;
+            &::after{
+                content:"";
+                height: .1rem;
+                width: 100%;
+                background: dodgerblue;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+            &::before{
+                // content: "";
+                // height: .1rem;
+                // width: 100%;
+                visibility: visible;
+                background: black;
+                opacity:1;
+            }
+        }
+    }
     &__main{
-        background: blue;
+        height: 17.2rem;
+        border: 2px solid $color-primary;
+        border-top: 0;
+        border-bottom:0;
+        transition: all .6s ease-in;
+        
+        // class to hide main chat window
+        &--hide{
+            height: 0;
+            visibility: hidden;
+        }
     }
     //message container
     &__messages{
         height: 15rem;
         overflow-y: scroll;
         background: $color-grey;
+    }
+    // messenger user
+    &__user{
+        font-weight: 700;
+        &--main{
+            color: $color-primary;
+        }
+        &--alt{
+            color: $color-secondary;
+        }
     }
     // indivdual message 
     &__item{
@@ -23,7 +124,11 @@
         }
         & > p {
             //remove bootstrap margin on paragraph
-            margin: 0;
+            display: inline-block;
+            color: $color-grey-dark;
+            &::first-letter{
+                margin-left: .25rem;
+            }
         }
     }
     &__hidden{
@@ -38,11 +143,15 @@
     &__form{
         display: flex;
         & > input {
-            color: red;
+            font-family:'Noto Sans', sans-serif;
+            font-size: 1rem;
             flex: 1 0 80%;
         }
         & > button{
             flex: 0 0 20%;
+        }
+        & > input {
+            border: none;
         }
     }
     &__close{

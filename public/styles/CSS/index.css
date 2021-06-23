@@ -8,6 +8,10 @@ a {
   cursor: pointer;
 }
 
+.u-red {
+  color: red;
+}
+
 .u-center-text {
   text-align: center;
 }
@@ -186,21 +190,110 @@ a {
 }
 
 .chat {
-  background: green;
-  text-align: right;
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 25%;
+  width: min(32rem, 100%);
   overflow: hidden;
+  font-family: "Noto Sans", sans-serif;
+}
+.chat__close {
+  display: flex;
+  justify-content: flex-end;
+  background: #05386b;
+}
+.chat__btn {
+  background: #D11A2A;
+  color: #edf5e1;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+  width: 1rem;
+  height: 1.8rem;
+  position: relative;
+  transition: all 3s;
+}
+.chat__btn:hover {
+  color: #379683;
+}
+.chat__btn div {
+  height: 0.1rem;
+  width: 1.2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #303030;
+  transition: all 2s;
+}
+.chat__btn div::after {
+  content: "";
+  height: 0.1rem;
+  width: 100%;
+  background: #303030;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.chat__btn div::before {
+  content: "";
+  visibility: hidden;
+  opacity: 0;
+  transition: all 3s;
+  position: absolute;
+  top: 0.25rem;
+  left: 50%;
+  height: 0.1rem;
+  width: 100%;
+}
+.chat__btn--expand > div {
+  height: 0.1rem;
+  width: 1.2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: green;
+}
+.chat__btn--expand > div::after {
+  content: "";
+  height: 0.1rem;
+  width: 100%;
+  background: dodgerblue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.chat__btn--expand > div::before {
+  visibility: visible;
+  background: black;
+  opacity: 1;
 }
 .chat__main {
-  background: blue;
+  height: 17.2rem;
+  border: 2px solid #05386b;
+  border-top: 0;
+  border-bottom: 0;
+  transition: all 0.6s ease-in;
+}
+.chat__main--hide {
+  height: 0;
+  visibility: hidden;
 }
 .chat__messages {
   height: 15rem;
   overflow-y: scroll;
   background: #dee2e6;
+}
+.chat__user {
+  font-weight: 700;
+}
+.chat__user--main {
+  color: #05386b;
+}
+.chat__user--alt {
+  color: #379683;
 }
 .chat__item {
   background-color: #dee2e6;
@@ -209,7 +302,11 @@ a {
   background-color: #c1c9d0;
 }
 .chat__item > p {
-  margin: 0;
+  display: inline-block;
+  color: #303030;
+}
+.chat__item > p::first-letter {
+  margin-left: 0.25rem;
 }
 .chat__hidden {
   height: 0;
@@ -219,11 +316,15 @@ a {
   display: flex;
 }
 .chat__form > input {
-  color: red;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
   flex: 1 0 80%;
 }
 .chat__form > button {
   flex: 0 0 20%;
+}
+.chat__form > input {
+  border: none;
 }
 .list {
   list-style: none;

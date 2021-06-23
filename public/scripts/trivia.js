@@ -21,7 +21,7 @@ window.onload = async () => {
 function appendMessage(data){
     const div = document.createElement('div');
     console.log(data);
-    div.innerHTML = `<p> ${data}</p>`;
+    div.innerHTML = `${data}`;
     div.classList.add("chat__item");
     messageContainer.append(div);
 }
@@ -35,44 +35,53 @@ function scrollDown(){
         
     }
 }
+//hide or show chat window
+function toggleChat(){
+    // add class to change the css icon
+    document.querySelector("#chat__close").classList.toggle('chat__btn--expand');
+    document.querySelector(".chat__main").classList.toggle('chat__main--hide');
+}
+const toggleChatBtn = document.getElementById("chat__close");
+toggleChatBtn.addEventListener('click', toggleChat);
+
 //JOIN ROOM
 // const name = prompt("What name are you playing under today?") || "Guest";
 const name = "BRIAN";
 //return the triviaID to be used for socketio room
-const room = () => {
+const getRoom = () => {
     const url = window.location.toString().split("/");
     return url[url.length-1];
 }
-appendMessage("You have connected..");
+appendMessage("You have connected...");
 
-socket.emit("joinRoom", {username: name, room: room()});
-
-// chatroom input submit
+//CHATROOM EVENTS
+socket.emit("joinRoom", {username: name, room: getRoom()});
+// chatroom input submit button
 chatSubmit.addEventListener('click', (e) => {
     e.preventDefault();
     let data = {
         user: name,
         message: chatInput.value,
-        room: room(),
+        room: getRoom(),
     }
     socket.emit("new-chat-message", data);
-    appendMessage(`You: ${chatInput.value}`);
+    appendMessage(`<span class="chat__user chat__user--main">You:</span> <p>${chatInput.value}</p>`);
     scrollDown();
     chatInput.value = '';
 });
-//handle chatroom events
+
 socket.on("chat-message", message => {
-    appendMessage(`${message.user}: ${message.message}`);
+    appendMessage(`<span class="chat__user chat__user--alt">${message.user}: </span><p>${message.message}</p>`);
     scrollDown();
 });
 
 socket.on("new-user", data => {
-    appendMessage(`${data} has joined the game.`);
+    appendMessage(`<span class="chat__user chat__user--alt">${data}</span> has joined the game.`);
     scrollDown();
 });
 
 socket.on('disconnect-message', (username) => {
-    appendMessage(`${username} has disconnected`);
+    appendMessage(`<span class="chat__user chat__user--alt">${username}</span> has disconnected`);
     scrollDown();
 });
 

@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="">
     <link rel="stylesheet" type="text/css" href="/styles/CSS/index.css">
     <title>Trivia At the Brewhouse</title>
 </head>
 <body>
     <div class="chat">
         <div class="chat__close">
-            X
+            <div class="chat__btn chat__btn--expand" id="chat__close">
+                <div><!-- Actual icon --></div>
+            </div>
         </div>
-        <div class="chat__main">
+        <div class="chat__main chat__main--hide">
             <div class="chat__messages" id="message_container"></div>
             <form class="chat__form">
                 <input type="text" id="chat_input">
