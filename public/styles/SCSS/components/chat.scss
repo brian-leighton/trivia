@@ -5,85 +5,82 @@
     width: min(32rem, 100%);
     overflow: hidden;
     font-family:'Noto Sans', sans-serif;
+    border-radius: 3px;
+    & h1 {
+        margin-left: .75rem;
+        font-size: 1.4rem;
+        padding-top: .25rem;
+        font-weight: 500;
+        color: $color-white;
+    }
     //close button
     &__close{
         display: flex;
-        justify-content: flex-end;
-        background: $color-primary;
+        justify-content: space-between;
+        // background: $color-primary;
+        background: $color-grey-dark;
     }
     // toggle button to show or hide chat window
     &__btn{
-        background: $color-red;
         color: $color-tertiary;
         padding: .25rem .75rem;
         cursor: pointer;
         width: 1rem;
         height: 1.8rem;
         position: relative;
-        transition: all 3s;
-
+        transition: all .3s ease-out;
+        
         &:hover{
-            color: $color-secondary;
+            background: $color-red;
+            // color: $color-secondary;
         }
         & div{
             //chat window is shown
-            height: .1rem;
-            width: 1.2rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg);
-            background: $color-grey-dark;
-            transition: all 2s;
-            &::after{
-                content:"";
-                height: .1rem;
-                width: 100%;
-                background: $color-grey-dark;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%) rotate(90deg);
+            margin-top: .9rem;
+            background: transparent;
+            position: relative;
+
+            &,
+            &::before,&::after{
+                height: 2px;
+                width: 1.2rem;
+                display: inline-block;
             }
-            &::before{
-                content:"";
-                visibility: hidden;
-                opacity: 0;
-                transition: all 3s;
+            
+            &::before,
+            &::after{
+                background: $color-white;
+                content: "";
                 position: absolute;
-                top: .25rem;
-                left: 50%;
-                height: .1rem;
-                width: 100%;
+                left: 0;
+                transition: all 1.2s;
+            }
+
+            &::after{
+                transform: rotate(-135deg);
+            }
+
+            &::before{
+                transform: rotate(135deg);
             }
 
         }
         &--expand > div{
             // chat window is hidden
-            height: .1rem;
-            width: 1.2rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg);
-            background: green;
+            background-color: $color-white;
+            transition: background-color .6s .8s;
+            transform: rotate(90deg);
+            &::after,&::before{
+                width: 60%;
+            }
             &::after{
-                content:"";
-                height: .1rem;
-                width: 100%;
-                background: dodgerblue;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%) rotate(90deg);
+                transform: rotate(45deg);
+                top: .2rem;
+                left: -.1rem;
             }
             &::before{
-                // content: "";
-                // height: .1rem;
-                // width: 100%;
-                visibility: visible;
-                background: black;
-                opacity:1;
+                top: -.2rem;
+                left: -.1rem;
             }
         }
     }

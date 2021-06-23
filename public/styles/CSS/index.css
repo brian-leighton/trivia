@@ -125,7 +125,7 @@ a {
 }
 
 .heading {
-  font-family: "PT Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .heading__primary {
   color: #05386b;
@@ -152,7 +152,7 @@ a {
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   text-decoration: none;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 700;
 }
@@ -196,79 +196,71 @@ a {
   width: min(32rem, 100%);
   overflow: hidden;
   font-family: "Noto Sans", sans-serif;
+  border-radius: 3px;
+}
+.chat h1 {
+  margin-left: 0.75rem;
+  font-size: 1.4rem;
+  padding-top: 0.25rem;
+  font-weight: 500;
+  color: #fff;
 }
 .chat__close {
   display: flex;
-  justify-content: flex-end;
-  background: #05386b;
+  justify-content: space-between;
+  background: #303030;
 }
 .chat__btn {
-  background: #D11A2A;
   color: #edf5e1;
   padding: 0.25rem 0.75rem;
   cursor: pointer;
   width: 1rem;
   height: 1.8rem;
   position: relative;
-  transition: all 3s;
+  transition: all 0.3s ease-out;
 }
 .chat__btn:hover {
-  color: #379683;
+  background: #D11A2A;
 }
 .chat__btn div {
-  height: 0.1rem;
+  margin-top: 0.9rem;
+  background: transparent;
+  position: relative;
+}
+.chat__btn div, .chat__btn div::before, .chat__btn div::after {
+  height: 2px;
   width: 1.2rem;
+  display: inline-block;
+}
+.chat__btn div::before, .chat__btn div::after {
+  background: #fff;
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: #303030;
-  transition: all 2s;
+  left: 0;
+  transition: all 1.2s;
 }
 .chat__btn div::after {
-  content: "";
-  height: 0.1rem;
-  width: 100%;
-  background: #303030;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(90deg);
+  transform: rotate(-135deg);
 }
 .chat__btn div::before {
-  content: "";
-  visibility: hidden;
-  opacity: 0;
-  transition: all 3s;
-  position: absolute;
-  top: 0.25rem;
-  left: 50%;
-  height: 0.1rem;
-  width: 100%;
+  transform: rotate(135deg);
 }
 .chat__btn--expand > div {
-  height: 0.1rem;
-  width: 1.2rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: green;
+  background-color: #fff;
+  transition: background-color 0.6s 0.8s;
+  transform: rotate(90deg);
+}
+.chat__btn--expand > div::after, .chat__btn--expand > div::before {
+  width: 60%;
 }
 .chat__btn--expand > div::after {
-  content: "";
-  height: 0.1rem;
-  width: 100%;
-  background: dodgerblue;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(90deg);
+  transform: rotate(45deg);
+  top: 0.2rem;
+  left: -0.1rem;
 }
 .chat__btn--expand > div::before {
-  visibility: visible;
-  background: black;
-  opacity: 1;
+  top: -0.2rem;
+  left: -0.1rem;
 }
 .chat__main {
   height: 17.2rem;
@@ -328,7 +320,7 @@ a {
 }
 .list {
   list-style: none;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Noto Sans JP", sans-serif;
   width: 80%;
   margin: 0 auto;
 }
@@ -360,7 +352,7 @@ a {
   color: #dee2e6;
   font-size: 1.6rem;
   font-weight: 700;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   border-radius: 2px 50% 50% 50%;
   min-width: 2.5rem;
   height: 2.5rem;
@@ -386,6 +378,71 @@ a {
 }
 .list__body a:hover {
   color: #379683;
+}
+
+.quiz {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: #05386b;
+}
+.quiz__history {
+  background: #D11A2A;
+  flex: 0 0 20%;
+}
+.quiz__content {
+  flex: 0 0 70%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #303030;
+  min-height: 80vh;
+  margin: 5rem auto;
+}
+.quiz__content > h1 {
+  padding: 1rem 0;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #edf5e1;
+}
+.quiz__question {
+  width: 100%;
+  background: #edf5e1;
+  flex: 0 1;
+}
+.quiz__question > h1 {
+  text-align: center;
+  font-size: 1.85rem;
+  padding: 1rem 0.25rem;
+  line-height: 2.5rem;
+  letter-spacing: 2px;
+  width: 45ch;
+  font-family: "Montserrat", sans-serif;
+  margin: 0 auto;
+}
+.quiz__answer {
+  background: #edf5e1;
+  flex: 1;
+  padding: 2.5rem 0;
+  display: flex;
+  gap: 2.5rem 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.quiz__answer--multiple {
+  width: max(40%, 25rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: green;
+  border-radius: 2px;
+}
+.quiz__answer--multiple > p {
+  font-family: "Noto Sans JP", sans-serif;
+  width: 66%;
 }
 
 .landing {

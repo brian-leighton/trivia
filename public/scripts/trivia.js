@@ -14,13 +14,11 @@ window.onload = async () => {
     let triviaRes = await axios.get(`/get/trivia/${triviaId}`);
     quiz = triviaRes.data;
 }
-
 //CHATROOM FUNCTIONALITY
 
 // add chat message to chat board
 function appendMessage(data){
     const div = document.createElement('div');
-    console.log(data);
     div.innerHTML = `${data}`;
     div.classList.add("chat__item");
     messageContainer.append(div);
@@ -38,7 +36,7 @@ function scrollDown(){
 //hide or show chat window
 function toggleChat(){
     // add class to change the css icon
-    document.querySelector("#chat__close").classList.toggle('chat__btn--expand');
+    document.querySelector(".chat__btn").classList.toggle('chat__btn--expand');
     document.querySelector(".chat__main").classList.toggle('chat__main--hide');
 }
 const toggleChatBtn = document.getElementById("chat__close");
