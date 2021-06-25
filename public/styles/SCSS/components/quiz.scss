@@ -3,11 +3,69 @@
     min-height: 100vh;
     display: flex;
     background: $color-primary;
+
     &__history{
         background: $color-red;
-        flex: 0 0 20%
+        flex: 0 0 20%;
         
         //make a slide out for small screens
+        @include mq("medium"){
+            position: relative;
+            flex: 0 0 0%;
+            visibility: hidden;
+            width: 0;
+            transition: all .6s ease-in;
+             &--answers {
+                 opacity: 0;
+                 visibility: hidden;
+                 transition:  opacity .2s .8s ease-in;
+             }
+            &--expand{
+                flex: 1 0 90%;
+                width: 90%;
+                opacity: 1;
+                visibility: visible;
+                & .quiz__history--answers {
+                    opacity: 1;
+                    visibility: visible;
+                    width: 100%;
+                    background: purple;
+                    transition: visibility .1s .9s, opacity .1s 1s ease-in;
+                }
+            }
+        }
+        @include mq("phone"){
+            & > * {
+                opacity: 0;
+            }
+            &--expand{
+                flex: 1 0 100%;
+                & > * {
+                    opacity: 1;
+                }
+                & > .quiz__history--btn{
+                    right: 0;
+                    transform: translate(0%);
+                }
+            }
+        }
+
+        &--btn{
+            visibility: hidden;
+            background: green;
+            position: absolute;
+            right: 0;
+            transform: translate(99%);
+            padding: .25rem .5rem;
+            @include mq("medium"){
+                visibility: visible;
+                opacity: 1;
+                //the transform sticks the button to the outside of the element
+            }
+            @include mq("phone"){
+                right: 0;
+            }
+        }
     }
     &__content{
         flex: 0 0 70%;
@@ -16,41 +74,37 @@
         // border: 2px solid $color-grey-dark;
         border-radius: 3px;
         overflow: hidden;
-        // background: $color-secondary;
-        background: $color-grey-dark;
+        background: $color-tertiary;
         min-height: 80vh;
         margin: 5rem auto;
+        @include mq("small"){
+            flex: 0 0 90%;
+            margin: 2rem auto;
+        }
 
-        & > h1{
-            padding: 1rem 0;
-            text-align: center;
-            font-family: $font-primary;
-            font-size: 2.4rem;
-            font-weight: 600;
-            color: $color-tertiary;
+        @include mq("phone"){
+            flex: 1;
         }
 
     }
     &__question{
-        width: 100%;
-        // min-height: 2rem;
-        // margin-top: 2.5rem;
-        background: $color-tertiary;
-        flex: 0 1;
+        width: 80%;
+        position: relative;
+        margin: 0 auto;
         & > h1 {
-            // background: white;
             text-align: center;
             font-size: 1.85rem;
             padding: 1rem .25rem;
             line-height: 2.5rem;
             letter-spacing: 2px;
-            width: 45ch;
+            width: min(45ch, 100%);
             font-family: $font-primary;
+            color: $color-grey-dark;
             margin: 0 auto;
         }
+
     }
     &__answer{
-        // background: blue;
         background: $color-tertiary;
         flex: 1;
         padding: 2.5rem 0;
@@ -60,13 +114,13 @@
         justify-content: space-around;
 
         &--multiple{
-            width: max(40%, 25rem);
+            width: max(40%, 22rem);
             display: flex;
             justify-content: center;
             align-items: center;
-            background: green;
+            background: $color-primary;
+            color: $color-tertiary;
             border-radius: 2px;
-            // height: 25%;
             & > p {
                  font-family: $font-secondary;
                 width: 66%;

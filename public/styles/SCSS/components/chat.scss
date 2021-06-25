@@ -1,11 +1,15 @@
 .chat{
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    right: 0;
+    right: 2rem;
     width: min(32rem, 100%);
     overflow: hidden;
     font-family:'Noto Sans', sans-serif;
     border-radius: 3px;
+
+    @include mq("small"){
+        right: 0;
+    }
     & h1 {
         margin-left: .75rem;
         font-size: 1.4rem;
@@ -86,7 +90,7 @@
     }
     &__main{
         height: 17.2rem;
-        border: 2px solid $color-primary;
+        border: 2px solid $color-grey-dark;
         border-top: 0;
         border-bottom:0;
         transition: all .6s ease-in;
@@ -101,6 +105,8 @@
     &__messages{
         height: 15rem;
         overflow-y: scroll;
+        scrollbar-color: $color-grey-dark $color-grey;
+        scrollbar-width: thin;
         background: $color-grey;
     }
     // messenger user
