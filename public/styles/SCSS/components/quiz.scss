@@ -3,13 +3,68 @@
     min-height: 100vh;
     display: flex;
     background: $color-grey;
+    overflow: hidden;
     // background: $color-grey;
 
     &__history{
         border-right: 2px solid $color-grey;
         background: $color-grey-dark;
         flex: 0 0 20%;
-        
+        max-height: 100vh;
+        overflow: scroll;
+        &--answers{
+            & > h1 {
+                margin-top: 2rem;
+                @include mq("small"){
+                    margin-top: .5rem;
+                }
+            }
+            & > h1, h6 {
+                font-family: $font-primary;
+                letter-spacing: 1px;
+                color: $color-white;
+            }
+            & > h6 {
+                color: $color-secondary;
+                font-weight: 600;
+                margin-bottom: 2rem;
+            }
+            & > ol{
+                // overflow-y: scroll;
+            } 
+            & > ol li {
+                //list of answers
+                position: relative;
+                list-style-position: inside;
+                font-family: $font-secondary;
+                padding: 0 1rem .8rem 1rem;
+                font-size: 1.1rem;
+                background: lighten($color-grey-dark, 15%);
+                color: $color-white;
+                cursor: pointer;
+
+                &:hover{
+                    background: $color-primary;
+                }
+            }
+            
+            // list marker style
+            & > ol li::marker{
+                font-family: $font-primary;
+                color: yellow !important;
+                font-size: 2rem;
+                display: inline-flex;
+                position: absolute;
+                top: -1rem;
+            }
+            & > ol li:nth-of-type(2n){
+                background: lighten($color-grey-dark, 10%);
+                color: $color-white;
+                &:hover{
+                    background: $color-primary;
+                }
+            }
+        }
         //make a slide out for small screens
         @include mq("medium"){
             position: relative;
@@ -21,17 +76,22 @@
                  opacity: 0;
                  visibility: hidden;
                  transition:  opacity .2s .8s ease-in;
+
+                
              }
             &--expand{
                 flex: 1 0 90%;
                 width: 90%;
                 opacity: 1;
                 visibility: visible;
+                overflow-y: scroll;
+                padding-bottom: 2.1rem;
+                //history answer styles when visible
                 & .quiz__history--answers {
+                    overflow-y: scroll;
                     opacity: 1;
                     visibility: visible;
                     width: 100%;
-                    background: purple;
                     transition: visibility .1s .9s, opacity .1s 1s ease-in;
                 }
             }
@@ -82,7 +142,16 @@
         margin: 5rem auto;
         @include mq("small"){
             flex: 0 0 90%;
-            margin: 2rem auto;
+            margin: 2rem auto 2.5rem auto;
+            visibility: visible;
+            opacity: 1;
+            transition: all .2s .8s ease-in;
+            &--hide{
+                opacity: 0;
+                visibility: hidden;
+                height: 0;
+                transition: all .2s ease-out;
+            }
         }
 
         @include mq("phone"){
@@ -137,7 +206,6 @@
         gap: 2.5rem 0;
         flex-wrap: wrap;
         justify-content: space-around;
-
         &--multiple{
             width: max(40%, 22rem);
             display: flex;
@@ -149,13 +217,26 @@
             color: $color-grey-dark;
             border-radius: 2px;
             filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+            cursor: pointer;
+            &:hover{
+                background: $color-secondary;
+                border: 2px solid lighten($color-secondary, 10%);
+                color: $color-grey;
+            }
             & > p {
                 font-family: $font-secondary;
                 width: 66%;
                 font-size: 1.2rem;
                 font-weight: 700;
                 text-align: center;
+                //prevents the click event from firing only on the p element
+                pointer-events: none;
              }
+        }
+        &--selected{
+            background: $color-secondary;
+            color: $color-grey;
+            border: 2px solid lighten($color-secondary, 10%);
         }
     }
     &__controls{
