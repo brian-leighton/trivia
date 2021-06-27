@@ -15,30 +15,38 @@
         }
     }
     &__secondary{
-        background: $color-tertiary;
-        color: #198754;
-        border: 1px solid #198754;
+        background: #157347;
+        color: $color-tertiary;
+        border: 2px solid darken(#198754, 10%);
+        transition: all .4s ease;
         &:hover{
-            background: #157347;
-            color: $color-tertiary;
-            border: 1px solid $color-grey-dark;
+            background: $color-tertiary;
+            color: #198754;
+            border: 2px solid #198754;
         }
     }
     &__tertiary{
-        color: $color-primary;
-        background: $color-tertiary;
-        border: 2px solid $color-primary;
         transition: all .4s ease;
+        background: $color-primary;
+        color: $color-tertiary;
+        border: 2px solid darken($color-primary, 10%);
         &:hover{
-            background: $color-primary;
-            color: $color-tertiary;
-            border: 2px solid $color-tertiary;
+            color: $color-primary;
+            background: $color-tertiary;
+            border: 2px solid $color-primary;
         }
+    }
+    &__red{
+
     }
     &__small{
         
     }
     &__large{
         font-size: 1.2rem;
+    }
+
+    &:hover{
+        cursor: pointer;
     }
 }
