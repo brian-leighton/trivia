@@ -49,26 +49,40 @@
             <!-- <h1 class="quiz__title">A trap for Rasputin</h1> -->
             <div class="quiz__question">
                 <!-- <h1>QUESTION</h1> -->
-                <h1>HERE IS MY QUESTION FOR YOU ANIMAL HERE IS MY QUESTION FOR YOU ANIMAL HERE IS MY</h1>
+                <h1 id="question"></h1>
                 <!-- <div class="tester"> -->
                     <div class="quiz__question--background"></div>
                 <!-- </div> -->
             </div>
             <div class="quiz__answer">
                 <!-- MULTIPLE CHOICE -->
-                <div class="quiz__answer--multiple">
-                    <p>HERE IS AN ANSWER that is longer than the rest, does it still look alright?</p>
-                </div>
-                <div class="quiz__answer--multiple">
-                    <p>HERE IS AN ANSWER</p>
-                </div>
-                <div class="quiz__answer--multiple">
-                    <p>HERE IS AN ANSWER that is longer than the rest, does it still look alright?</p>
-                </div>
-                <div class="quiz__answer--multiple">
-                    <p>HERE IS AN ANSWER that is longer than the rest, does it still look alright?</p>
+                <div class="quiz__answer--container" id="multiple">
+                    <!-- <div class="quiz__answer--multiple">
+                        <p>HERE IS AN ANSWER that is longer than the rest, does it still look alright?</p>
+                    </div>
+                    <div class="quiz__answer--multiple">
+                        <p>HERE IS AN ANSWER</p>
+                    </div>
+                    <div class="quiz__answer--multiple">
+                        <p>HERE IS AN ANSWER that is longer than the rest, does it still look alright?</p>
+                    </div>
+                    <div class="quiz__answer--multiple">
+                        <p>HERE IS AN ANSWER that is longer than the rest, does it still look alright?</p>
+                    </div> -->
                 </div>
                 <!-- WRITTEN -->
+                <!-- <div class="quiz__answer--container" id="written"> -->
+                    <div class="quiz__answer--written" id="written">
+                        <div class="form__floating">
+                            <input type="text" id="ff" placeholder="hi">
+                            <label for="ff">Enter your answer</label>
+                        </div>
+                        <h6 id="quiz__answer--error">*answers are not case sensitive</h6>
+                        <div class="quiz__answer--submit">
+                            <button id="quiz__answer--submit">Submit Answer</button>
+                        </div>
+                    </div>
+                <!-- </div> -->
             </div>
             <div class="quiz__controls">
                 <div class="btn btn__tertiary">PREVIOUS QUESTION</div>
@@ -94,6 +108,7 @@
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" type="text/javascript"></script>
+    <script src="/scripts/quiz.js"></script>
     <script src="/scripts/trivia.js"></script>
     <script src="/scripts/uiScript.js"></script>
 </body>

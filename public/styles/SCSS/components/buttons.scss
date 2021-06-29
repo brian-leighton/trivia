@@ -27,13 +27,13 @@
     }
     &__tertiary{
         transition: all .4s ease;
-        background: $color-primary;
+        background: $color-red;
         color: $color-tertiary;
-        border: 2px solid darken($color-primary, 10%);
+        border: 2px solid darken($color-red, 10%);
         &:hover{
-            color: $color-primary;
+            color: $color-red;
             background: $color-tertiary;
-            border: 2px solid $color-primary;
+            border: 2px solid $color-red;
         }
     }
     &__red{

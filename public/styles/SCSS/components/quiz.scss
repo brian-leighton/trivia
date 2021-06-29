@@ -137,21 +137,25 @@
         border-radius: 3px;
         overflow: hidden;
         background: $color-tertiary;
+        position: relative;
         // background: $color-secondary;
         min-height: 80vh;
         margin: 5rem auto;
+
+        &--hide{
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+            padding: 0;
+            transition: all .2s ease-out;
+        }
+
         @include mq("small"){
             flex: 0 0 90%;
             margin: 2rem auto 2.5rem auto;
             visibility: visible;
             opacity: 1;
             transition: all .2s .8s ease-in;
-            &--hide{
-                opacity: 0;
-                visibility: hidden;
-                height: 0;
-                transition: all .2s ease-out;
-            }
         }
 
         @include mq("phone"){
@@ -198,14 +202,20 @@
         }
     }
     &__answer{
-        background: $color-tertiary;
-        // background: $color-secondary;
-        flex: 1;
-        padding: 2.5rem 0;
-        display: flex;
-        gap: 2.5rem 0;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        position: relative;
+        &--container{
+            // position: absolute;
+            // background: red;
+            width: 100%;
+            // background: $color-tertiary;
+            flex: 1;
+            padding: 2.5rem 0;
+            display: flex;
+            gap: 2.5rem 0;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        // background: $color-grey;
         &--multiple{
             width: max(40%, 22rem);
             display: flex;
@@ -233,17 +243,92 @@
                 pointer-events: none;
              }
         }
+        &--written{
+            position: absolute;
+            top: 5rem;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        &--submit{
+            
+            & > button{
+            display: block;
+            background: green;
+            font-family: $font-secondary;
+            letter-spacing: 1px;
+            align-self: center;
+            padding: .5rem 1rem;
+            border: none;
+            margin: 1rem auto;
+            transition: color 1s .3s ease-out;
+            cursor: pointer;
+            color: $color-white;
+            // animation: spinOut .8s ease-in;
+            // text-align: center;
+            &::before, &::after{
+                content:"";
+                position: absolute;
+                width: 4px;
+                opacity: 0;
+                // transition: opacity .2s .6s;
+            }
+            &::before{
+                height: 1.3rem;
+                bottom: 8px;
+                left: 15px;
+                transform: rotate(45deg);
+                background: green;
+            }
+            &::after{
+                position: absolute;
+                height: .6rem;
+                bottom: 18px;
+                left: 24px;
+                transform: rotate(315deg);
+                background: green;
+            }
+        }
+        &-check{
+            & > button {
+                padding: 0;
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                border: 2px solid green;
+                background: $color-grey;
+                position: relative;
+                color: transparent;
+                // transition: all .8s cubic-bezier(.81,1.22,.5,.11);
+                transition: height .8s ease-in, width .8s ease-in, border-radius .8s ease-in;
+                animation: spin .8s forwards ease-in-out;
+                &::before, &::after{
+                    content:"";
+                    position: absolute;
+                    width: 4px;
+                    opacity: 1;
+                    transition: opacity .2s .6s;
+                    }  
+                }
+            }
+        }
+
         &--selected{
             background: $color-secondary;
             color: $color-grey;
             border: 2px solid lighten($color-secondary, 10%);
         }
     }
+
     &__controls{
-        // height: 2rem;
-        // background: red;
         display: flex;
         justify-content: space-around;
-        margin-bottom: 2rem;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        margin-bottom: 1rem;
+        @include mq("small"){
+            position: relative;
+        }
     }
 }

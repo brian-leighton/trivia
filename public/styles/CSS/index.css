@@ -8,6 +8,36 @@ a {
   cursor: pointer;
 }
 
+@keyframes spin {
+  0% {
+    width: 150px;
+    transform: rotate(0);
+    border-radius: 0;
+  }
+  100% {
+    width: 2.5rem;
+    height: 2.5rem;
+    transform: rotate(540deg);
+    border-radius: 50%;
+  }
+}
+@keyframes spinOut {
+  0% {
+    width: 2.5rem;
+    height: 2.5rem;
+    transform: rotate(540deg);
+    border-radius: 50%;
+  }
+  40% {
+    transform: rotate(540deg);
+    border-radius: 0;
+  }
+  100% {
+    width: 150px;
+    transform: rotate(0);
+    border-radius: 0;
+  }
+}
 .u-center-text {
   text-align: center;
 }
@@ -173,14 +203,14 @@ a {
 }
 .btn__tertiary {
   transition: all 0.4s ease;
-  background: #05386b;
+  background: #D11A2A;
   color: #edf5e1;
-  border: 2px solid #031f3a;
+  border: 2px solid #a41421;
 }
 .btn__tertiary:hover {
-  color: #05386b;
+  color: #D11A2A;
   background: #edf5e1;
-  border: 2px solid #05386b;
+  border: 2px solid #D11A2A;
 }
 .btn__large {
   font-size: 1.2rem;
@@ -387,6 +417,37 @@ a {
   color: #379683;
 }
 
+.form__floating {
+  position: relative;
+  background: yellow;
+}
+.form__floating > input {
+  font-size: 1.2rem;
+  height: 100%;
+  padding: 1.6rem 1rem 0.4rem 1rem;
+  color: #303030;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.form__floating > input::placeholder {
+  color: transparent;
+}
+.form__floating input:not(:placeholder-shown) + label, .form__floating input:focus + label {
+  transform: scale(0.7) translateY(-1.7rem) translateX(-2.5rem);
+  opacity: 0.5;
+}
+.form__floating > label {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #303030;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  padding: 1rem 0.5rem;
+  font-size: 1.2rem;
+  transition: all 0.2s ease-in-out;
+}
+
 .quiz {
   width: 100%;
   min-height: 100vh;
@@ -518,8 +579,16 @@ a {
   border-radius: 3px;
   overflow: hidden;
   background: #edf5e1;
+  position: relative;
   min-height: 80vh;
   margin: 5rem auto;
+}
+.quiz__content--hide {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+  transition: all 0.2s ease-out;
 }
 @media (max-width: 40em) {
   .quiz__content {
@@ -528,12 +597,6 @@ a {
     visibility: visible;
     opacity: 1;
     transition: all 0.2s 0.8s ease-in;
-  }
-  .quiz__content--hide {
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    transition: all 0.2s ease-out;
   }
 }
 @media (max-width: 28em) {
@@ -579,7 +642,10 @@ a {
   background: #05386b;
 }
 .quiz__answer {
-  background: #edf5e1;
+  position: relative;
+}
+.quiz__answer--container {
+  width: 100%;
   flex: 1;
   padding: 2.5rem 0;
   display: flex;
@@ -612,6 +678,65 @@ a {
   text-align: center;
   pointer-events: none;
 }
+.quiz__answer--written {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translate(-50%);
+}
+.quiz__answer--submit > button {
+  display: block;
+  background: green;
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 1px;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  margin: 1rem auto;
+  transition: color 1s 0.3s ease-out;
+  cursor: pointer;
+  color: #fff;
+}
+.quiz__answer--submit > button::before, .quiz__answer--submit > button::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  opacity: 0;
+}
+.quiz__answer--submit > button::before {
+  height: 1.3rem;
+  bottom: 8px;
+  left: 15px;
+  transform: rotate(45deg);
+  background: green;
+}
+.quiz__answer--submit > button::after {
+  position: absolute;
+  height: 0.6rem;
+  bottom: 18px;
+  left: 24px;
+  transform: rotate(315deg);
+  background: green;
+}
+.quiz__answer--submit-check > button {
+  padding: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid green;
+  background: #dee2e6;
+  position: relative;
+  color: transparent;
+  transition: height 0.8s ease-in, width 0.8s ease-in, border-radius 0.8s ease-in;
+  animation: spin 0.8s forwards ease-in-out;
+}
+.quiz__answer--submit-check > button::before, .quiz__answer--submit-check > button::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  opacity: 1;
+  transition: opacity 0.2s 0.6s;
+}
 .quiz__answer--selected {
   background: #379683;
   color: #dee2e6;
@@ -620,7 +745,15 @@ a {
 .quiz__controls {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 2rem;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 1rem;
+}
+@media (max-width: 40em) {
+  .quiz__controls {
+    position: relative;
+  }
 }
 
 .landing {

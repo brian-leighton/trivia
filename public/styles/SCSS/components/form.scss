@@ -1,0 +1,36 @@
+.form__floating{
+    position: relative;
+    background: yellow;
+    // min-width: 20rem;
+    & > input {
+        // width: calc(100% - 2.25rem);
+        // width: 100%;
+        font-size: 1.2rem;
+        height: 100%;
+        padding: 1.6rem 1rem .4rem 1rem;
+        color: $color-grey-dark;
+        font-family: $font-primary;
+        font-weight: 600;
+    }
+    & > input::placeholder{
+        color: transparent;
+        
+    }
+    
+    & input:not(:placeholder-shown) + label, & input:focus + label{
+        transform: scale(.7) translateY(-1.7rem) translateX(-2.5rem);
+        opacity: .5;
+        // font-siz
+    }
+    & > label {
+        font-family: $font-secondary;
+        color: $color-grey-dark;
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        padding: 1rem .5rem;
+        font-size: 1.2rem;
+        transition: all .2s ease-in-out;
+    }
+}

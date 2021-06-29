@@ -1,0 +1,32 @@
+@keyframes spin {
+    0%{
+        width: 150px;
+        transform: rotate(0);
+        border-radius: 0;
+        // color: transparent;
+    }
+    100%{
+        width: 2.5rem;
+        height: 2.5rem;
+        transform: rotate(540deg);
+        border-radius: 50%;
+    }
+}
+
+@keyframes spinOut{
+    0%{
+        width: 2.5rem;
+        height: 2.5rem;
+        transform: rotate(540deg);
+        border-radius: 50%;
+    }
+    40%{
+        transform: rotate(540deg);
+        border-radius: 0;
+    }
+    100% {
+        width: 150px;
+        transform: rotate(0);
+        border-radius: 0;
+    }
+}

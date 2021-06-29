@@ -4,15 +4,8 @@ const socket = io();
 const chatInput = document.getElementById("chat_input");
 const chatSubmit = document.getElementById("chat_submit");
 const messageContainer = document.getElementById("message_container");
-let quiz = [];
 // the prompt overrides the .onload event -- place above the prompt
 
-window.onload = async () => {
-    let url = window.location.pathname;
-    let triviaId = url.substring(url.lastIndexOf('/') + 1);
-    let triviaRes = await axios.get(`/get/trivia/${triviaId}`);
-    quiz = triviaRes.data;
-}
 //CHATROOM FUNCTIONALITY
 
 // add chat message to chat board
