@@ -29,17 +29,17 @@ function renderQuestion(question){
         writtenAnswer.classList.add('quiz__content--hide');
         multiAnswer.classList.remove('quiz__content--hide');
         // render multiple choice answers
-        multiAnswer.appendChild(renderAnswers(question.answers));
+        // console.log(typeof renderAnswers(question.answers));
+        renderAnswers(question.answers);
     }
     
 }
 //render multi choice answers
 function renderAnswers(answers){
     const result = [];
-
+    clearAnswers(multiAnswer);
     //add new answers
     answers.forEach((answer) => {
-        //this code causes an error but doesn't break the application
         const div = document.createElement('div'),
         p   = document.createElement('p');
         div.classList.add('quiz__answer--multiple');
