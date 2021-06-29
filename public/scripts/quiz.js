@@ -1,4 +1,3 @@
-
 window.onload = async () => {
     let url = window.location.pathname;
     let triviaId = url.substring(url.lastIndexOf('/') + 1);
@@ -17,22 +16,22 @@ const multiAnswer = document.querySelector('#multiple'),
       qQuestion = document.querySelector("#question");
 
 function renderQuestion(question){
-    console.log(question);
+    // console.log(question);
     //display question
     qQuestion.innerHTML = question.question;
-    //apply classes to hide and show the respective inputs
     // check the type of question (multiple/written)
     if(question.type === "text"){
+        //apply classes to hide and show the respective inputs
         multiAnswer.classList.add('quiz__content--hide');
         writtenAnswer.classList.remove('quiz__content--hide');
     } else {
         writtenAnswer.classList.add('quiz__content--hide');
         multiAnswer.classList.remove('quiz__content--hide');
         // render multiple choice answers
-        // console.log(typeof renderAnswers(question.answers));
         renderAnswers(question.answers);
     }
-    
+    //update history
+    updateHistory(question, currentQuestion);
 }
 //render multi choice answers
 function renderAnswers(answers){
@@ -44,7 +43,6 @@ function renderAnswers(answers){
         p   = document.createElement('p');
         div.classList.add('quiz__answer--multiple');
         p.innerHTML = answer.answer;
-        console.log(answer.answer);
         div.appendChild(p);
         div.addEventListener('click', (e) => selectAnswer(e));
         multiAnswer.appendChild(div);
@@ -86,6 +84,40 @@ function previousQuestion(){
     currentQuestion = currentQuestion - 1;
     renderQuestion(quiz.quiz[currentQuestion]);
 }
+//set up click events for next/previous questions
+document.querySelector("#last").addEventListener('click', previousQuestion);
+document.querySelector("#next").addEventListener('click', nextQuestion);
 //toggle between multiple choice and written answer based on the question type
-//update question history when new question is added
+//update question history
+function updateHistory(question, index){
+    for(let i = 0; i < quizHistory.length; i++){
+        //if question already exsist in history don't add
+        if(question.question === quizHistory[i].question){
+            return;
+        }
+    }
+    //else add to history array
+    quizHistory.push(question);
+    //render history array
+    renderHistory();
+}
+function renderHistory(){
+    //clear history
+    document.querySelector("#history").innerHTML = '';
+    quizHistory.forEach((question, index) => {
+        let li = document.createElement('li');
+        li.innerHTML = question.question;
+        li.addEventListener('click', (e) => changeQuestion(e));
+        document.querySelector("#history").appendChild(li);
+    });
+}
+//handle selecting a specific question from history
+function changeQuestion(question){
+    //get hidden index number from element
+    let li = question.target.closest('li');
+    let node = Array.from(document.querySelector("#history").children);
+    let index = node.indexOf(li);
+    renderQuestion(quizHistory[index]);
+}
 //handle written input answers
+//tally final score

@@ -203,11 +203,12 @@
     }
     &__answer{
         position: relative;
+        display: block;
+        height: 100%;
         &--container{
-            // position: absolute;
-            // background: red;
             width: 100%;
-            // background: $color-tertiary;
+            height: min(25rem, 75%);
+            // max-height: 75%;
             flex: 1;
             padding: 2.5rem 0;
             display: flex;
@@ -215,7 +216,6 @@
             flex-wrap: wrap;
             justify-content: space-around;
         }
-        // background: $color-grey;
         &--multiple{
             width: max(40%, 22rem);
             display: flex;

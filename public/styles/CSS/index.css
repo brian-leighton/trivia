@@ -643,9 +643,12 @@ a {
 }
 .quiz__answer {
   position: relative;
+  display: block;
+  height: 100%;
 }
 .quiz__answer--container {
   width: 100%;
+  height: min(25rem, 75%);
   flex: 1;
   padding: 2.5rem 0;
   display: flex;
