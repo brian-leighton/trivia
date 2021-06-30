@@ -73,6 +73,234 @@
             }
         ]
     },
+    "5880": {
+        "title": "A quiz homie",
+        "difficulty": "mixed",
+        "quiz": [
+            {
+                "question": "What was the title of the first Bond movie, released in 1962?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Dr. No",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "From Russia with Love",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Goldfinger",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Thunderball",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which of these is NOT a part of the structure of a typical neuron?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Islets of Langerhans",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Node of Ranvier",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Schwann cell",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Myelin sheath",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "When was the game &quot;Roblox&quot; released?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "2006",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "2003",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "2002",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "2007",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What is Meg&#039;s full name in &quot;Family Guy&quot;?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Megatron Griffin",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Who-Cares Griffin",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Neil Griffin",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Megan Griffin",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which of these operators from &quot;Tom Clancy&#039;s Rainbow Six Siege&quot; has the ability to damage reinforced walls?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Jordan &quot;Thermite&quot; Trace",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Eliza &quot;Ash&quot; Cohen",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Seamus &quot;Sledge&quot; Cowden",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Dominic &quot;Bandit&quot; Brunsmeier",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "In which game did the Konami Code make its first appearance?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Gradius",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Contra",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Castlevania",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Dance Dance Revolution",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which animation studio produced &quot;Sword Art Online&quot;?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "A-1 Pictures",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Production I.G",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Silver Link",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Kyoto Animation",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "An equilateral triangle always has every angle measuring 60&deg;.",
+                "type": "boolean",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "True",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "False",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Who assassinated President James A. Garfield?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "Charles Guiteau",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Sirhan Sirhan",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Leon Czolgosz",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "John Wilkes Booth",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What is the lowest amount of max health you can have in Team Fortress 2?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "70",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "100",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "50",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "95",
+                        "isCorrect": false
+                    }
+                ]
+            }
+        ]
+    },
     "9633": {
         "title": "A new quiz",
         "difficulty": "mixed",

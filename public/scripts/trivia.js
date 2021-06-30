@@ -42,6 +42,16 @@ const getRoom = () => {
     const url = window.location.toString().split("/");
     return url[url.length-1];
 }
+const announceScore = (score) => {
+    const data = {
+        user: name,
+        message: `I scored ${score}`,
+        room: getRoom(),
+    }
+    socket.emit("new-chat-message", data);
+    appendMessage(`<span class="chat__user chat__user--alt">You: </span><p>${data.message}</p>`);
+}
+export default announceScore;
 appendMessage("You have connected...");
 
 //CHATROOM EVENTS

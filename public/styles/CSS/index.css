@@ -460,7 +460,10 @@ a {
   background: #303030;
   flex: 0 0 20%;
   max-height: 100vh;
-  overflow: scroll;
+}
+.quiz__history--answers {
+  overflow-y: scroll;
+  height: 100%;
 }
 .quiz__history--answers > h1 {
   margin-top: 2rem;
@@ -658,6 +661,7 @@ a {
 }
 .quiz__answer--multiple {
   width: max(40%, 22rem);
+  height: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -679,6 +683,7 @@ a {
   font-size: 1.2rem;
   font-weight: 700;
   text-align: center;
+  padding: 2rem 0;
   pointer-events: none;
 }
 .quiz__answer--written {
@@ -757,6 +762,16 @@ a {
   .quiz__controls {
     position: relative;
   }
+}
+.quiz__result {
+  background: mediumslateblue;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease-in;
+  height: 100vh;
+  width: 100vw;
 }
 
 .landing {
