@@ -100,8 +100,7 @@ let pauseQuiz = false;
 //select next question
 function nextQuestion(){
     //reset if at the end of the quiz
-    // console.log(isComplete());
-    if(isComplete()) return;
+    // if(isComplete()) return;
     if(currentQuestion >= quiz.quiz.length -1){
         currentQuestion = 0;
         renderQuestion(quiz.quiz[currentQuestion]);
@@ -149,5 +148,33 @@ function changeQuestion(question){
     currentQuestion = index;
     renderQuestion(quizHistory[index]);
 }
+const quizSubmit = document.querySelector(".quiz__answer--submit");
+//clickable button is the ID
+document.querySelector("#quiz__answer--submit").addEventListener('click', (e) => {
+    quizSubmit.classList.toggle("quiz__answer--submit-check");
+});
 //handle written input answers
+document.querySelector(".quiz__answer--submit").addEventListener('click', handleTextInput);
+function handleTextInput(){
+    const input = document.querySelector("#textInput");
+    quizHistory[currentQuestion].answer = checkAnswer(input.value, quiz.quiz[currentQuestion].answers);
+
+    //allow for animation to happen;
+    setTimeout(() => {nextQuestion(); quizSubmit.classList.remove('quiz__answer--submit-check');}, 1200);
+    //remove check class from button after page change
+    input.value = "";
+    quizSubmit.classList.add('quiz__answer--submit-check');
+    //clear input value
+}
+//check written answer
+function checkAnswer(userAnswer, answers){
+    let answerObj = {answer: userAnswer, isCorrect: false}
+    for(let i = 0; i < answers.length; i++){
+        if(userAnswer === answers[i]){
+            console.log(userAnswer.toLowerCase(), quiz.quiz[currentQuestion].answers[i].toLowerCase());
+            answerObj.isCorrect = true;
+        }
+    }
+    return answerObj;
+}
 //tally final score

@@ -42,10 +42,10 @@ const getRoom = () => {
     const url = window.location.toString().split("/");
     return url[url.length-1];
 }
-const announceScore = (score) => {
+const announceScore = () => {
     const data = {
         user: name,
-        message: `I scored ${score}`,
+        message: `I scored ${correct} / ${total}`,
         room: getRoom(),
     }
     socket.emit("new-chat-message", data);
