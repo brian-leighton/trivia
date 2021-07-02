@@ -57,7 +57,7 @@ function renderAnswers(answers, userAnswer){
             }
         }
         userAnswer && userAnswer.index === index ? 
-                    div.classList.add('quiz__answer--multiple', 'quiz__answer--selected', `${!answer.isCorrect ? 'isIncorrect': null}`) :
+                    div.classList.add('quiz__answer--multiple', 'quiz__answer--selected', `${stopQuiz && !answer.isCorrect ? 'isIncorrect': null}`) :
                     div.classList.add('quiz__answer--multiple');
         p.innerHTML = answer.answer;
         div.appendChild(p);
@@ -155,7 +155,6 @@ function renderHistory(){
 }
 //handle selecting a specific question from history
 function changeQuestion(question){
-    //get hidden index number from element
     let li = question.target.closest('li');
     let node = Array.from(document.querySelector("#history").children);
     let index = node.indexOf(li);
