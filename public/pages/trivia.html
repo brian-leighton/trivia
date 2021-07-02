@@ -46,32 +46,18 @@
         </div>
         <div class="quiz__content">
             <!-- QUIZ QUESTION DISPLAY -->
-            <!-- <h1 class="quiz__title">A trap for Rasputin</h1> -->
             <div class="quiz__question">
-                <!-- <h1>QUESTION</h1> -->
                 <h1 id="question"></h1>
-                <!-- <div class="tester"> -->
                     <div class="quiz__question--background"></div>
-                <!-- </div> -->
             </div>
             <div class="quiz__answer">
                 <!-- MULTIPLE CHOICE -->
                 <div class="quiz__answer--container" id="multiple">
                     <!-- <div class="quiz__answer--multiple">
                         <p>HERE IS AN ANSWER that is longer than the rest, does it still look alright?</p>
-                    </div>
-                    <div class="quiz__answer--multiple">
-                        <p>HERE IS AN ANSWER</p>
-                    </div>
-                    <div class="quiz__answer--multiple">
-                        <p>HERE IS AN ANSWER that is longer than the rest, does it still look alright?</p>
-                    </div>
-                    <div class="quiz__answer--multiple">
-                        <p>HERE IS AN ANSWER that is longer than the rest, does it still look alright?</p>
                     </div> -->
                 </div>
                 <!-- WRITTEN -->
-                <!-- <div class="quiz__answer--container" id="written"> -->
                     <div class="quiz__answer--written quiz__content--hide" id="written">
                         <div class="form__floating">
                             <input type="text" id="textInput" placeholder="hi">
@@ -82,12 +68,42 @@
                             <button id="quiz__answer--submit">Submit Answer</button>
                         </div>
                     </div>
-                <!-- </div> -->
-            </div>
-            <!-- <div class="quiz__controls"> -->
-                <!-- <div class="btn btn__tertiary" id="last">PREVIOUS QUESTION</div> -->
-                <!-- <div class="btn btn__secondary" id="next">NEXT QUESTION</div> -->
-            <!-- </div> -->
+                </div>
+                <div class="quiz__answer--display-written quiz__content--hide">
+                    <div>
+                        <span id="isCorrect"></span>
+                        <p>You answered:</p>
+                        <p id="userAnswer">asdasdasd</p>
+
+                    </div>
+                    <p class="heading u-margin-bottom-tiny u-center-text">Acceptable Answers:</p>
+                    <ul class="quiz__answer--list">
+                        <li class="quiz__answer--list-item col-5">item 1</li>
+                        <li class="quiz__answer--list-item col-5">item 2</li>
+                        <li class="quiz__answer--list-item col-5">item 3</li>
+                        <li class="quiz__answer--list-item col-5">item 4</li>
+                        <li class="quiz__answer--list-item col-5">item 5</li>
+                        <li class="quiz__answer--list-item col-5">item 6</li>
+                        <li class="quiz__answer--list-item col-5">item 7</li>
+                        <li class="quiz__answer--list-item col-5">item 8</li>
+                        <li class="quiz__answer--list-item col-5">item 1</li>
+                        <li class="quiz__answer--list-item col-5">item 2</li>
+                        <li class="quiz__answer--list-item col-5">item 3</li>
+                        <li class="quiz__answer--list-item col-5">item 4</li>
+                        <li class="quiz__answer--list-item col-5">item 5</li>
+                        <li class="quiz__answer--list-item col-5">item 6</li>
+                        <li class="quiz__answer--list-item col-5">item 7</li>
+                        <li class="quiz__answer--list-item col-5">item 4</li>
+                        <li class="quiz__answer--list-item col-5">item 5</li>
+                        <li class="quiz__answer--list-item col-5">item 6</li>
+                        <li class="quiz__answer--list-item col-5">item 7</li>
+                        <li class="quiz__answer--list-item col-5">item 99</li>
+                    </ul>
+                </div>
+            <div class="quiz__controls">
+                <div class="btn btn__tertiary" id="last">PREVIOUS QUESTION</div>
+                <div class="btn btn__secondary" id="next">NEXT QUESTION</div>
+             </div>
         </div>
     </div>
     <!-- SHOW FINAL SCORE -->

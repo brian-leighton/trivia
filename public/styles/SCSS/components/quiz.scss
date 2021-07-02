@@ -203,7 +203,6 @@
         }
     }
     &__answer{
-        position: relative;
         display: block;
         height: 100%;
         &--container{
@@ -248,13 +247,56 @@
         }
         &--written{
             position: absolute;
-            top: 5rem;
+            height: 100%;
+            top: 50%;
             left: 50%;
-            transform: translate(-50%);
+            transform: translate(-50%, -25%);
         }
-
+        &--list{
+            background: $color-green;
+            width: 80%;
+            margin: 0 auto;
+            list-style: none;
+            text-align: center;
+            font-family: $font-secondary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: .5rem;
+            &-item{
+                background: purple;
+            }
+            @include mq("small"){
+                height: calc(100% - 16rem);
+                overflow: scroll;
+                padding: .5rem 0;
+                &-item{
+                    padding: .2rem 0;
+                    flex: 0 0 80%;
+                    background: maroon;
+                }
+            }
+        }
+        //written answer display
+        &--display-written{
+            position: absolute;
+            top: 6rem;
+            width: 100%;
+            height: calc(100% - 3.5rem);
+            background: red;
+            & > div {
+                background: blue;
+                text-align: center;
+                font-family: $font-secondary;
+                & > p {
+                    width: max-content;
+                    margin: 1rem auto;
+                    background: yellow;
+                }
+            }
+        }
         &--submit{
-            
             & > button{
             display: block;
             background: green;
@@ -345,4 +387,11 @@
         height: 100vh;
         width: 100vw;
     }
+}
+
+.isCorrect{
+ background: cornflowerblue;
+}
+.isIncorrect{
+    background: red !important;
 }

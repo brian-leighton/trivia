@@ -22,6 +22,7 @@ const multiAnswer = document.querySelector('#multiple'),
 function renderQuestion(question){
     //display question
     qQuestion.innerHTML = question.question;
+    //if quiz is complete render with correct answer highlighted
     // check the type of question (multiple/written)
     if(question.type === "text"){
         //apply classes to hide and show the respective inputs
@@ -39,14 +40,24 @@ function renderQuestion(question){
 //render multi choice answers
 function renderAnswers(answers, userAnswer){
     const result = [];
+    console.log('answers', quiz.quiz);
     clearAnswers(multiAnswer);
     //add new answers
     answers.forEach((answer, index) => {
-        // userAnswer ? console.log(userAnswer.index) : console.log('no') ;
         const div = document.createElement('div'),
         p = document.createElement('p');
+        if(stopQuiz){
+            if(answer.isCorrect){
+                console.log('why are you no work')
+                div.classList.add('isCorrect');
+            } else if (userAnswer.index === index && !answer.isCorrect){
+                div.classList.add('isIncorrect');
+            } else {
+                console.log('you fucking suck cock boy')
+            }
+        }
         userAnswer && userAnswer.index === index ? 
-                    div.classList.add('quiz__answer--multiple', 'quiz__answer--selected') :
+                    div.classList.add('quiz__answer--multiple', 'quiz__answer--selected', `${!answer.isCorrect ? 'isIncorrect': null}`) :
                     div.classList.add('quiz__answer--multiple');
         p.innerHTML = answer.answer;
         div.appendChild(p);
@@ -61,6 +72,7 @@ function clearAnswers(node){
 //select an answer
 function selectAnswer(event){
     const selectedAnswers = document.querySelectorAll(".quiz__answer--selected");
+    if(stopQuiz) { nextQuestion(); return};
     //clear all instances of selected class;
     selectedAnswers.forEach(answer => {
         answer.classList.remove("quiz__answer--selected");
@@ -80,27 +92,29 @@ function selectAnswer(event){
     event.target.classList.add("quiz__answer--selected");
     nextQuestion();
 }
+let stopQuiz = false;
 function isComplete(){
     if(quizHistory.length === quiz.quiz.length){
         if(confirm('Congratulations! Are you ready to Submit your answers?')){
             //render result
-            renderResult();
-            return true;
+            // displayResult();
+            stopQuiz = true;
         }
     }
 }
-function renderResult(){
+function displayResult(){
     const container = document.querySelector(".quiz__result--total");
-    console.log(quizHistory.length);
     announceScore(correctTotal, quizHistory.length);
         //   document.querySelector(".quizTotal").
     document.querySelector(".quiz__result").classList.toggle('quiz__content--hide');
 }
-let pauseQuiz = false;
+function renderResult(a){
+    console.log(a);
+}
 //select next question
 function nextQuestion(){
     //reset if at the end of the quiz
-    // if(isComplete()) return;
+    if(!stopQuiz && isComplete()) return;
     if(currentQuestion >= quiz.quiz.length -1){
         currentQuestion = 0;
         renderQuestion(quiz.quiz[currentQuestion]);
@@ -158,13 +172,16 @@ document.querySelector(".quiz__answer--submit").addEventListener('click', handle
 function handleTextInput(){
     const input = document.querySelector("#textInput");
     quizHistory[currentQuestion].answer = checkAnswer(input.value, quiz.quiz[currentQuestion].answers);
-
     //allow for animation to happen;
     setTimeout(() => {nextQuestion(); quizSubmit.classList.remove('quiz__answer--submit-check');}, 1200);
     //remove check class from button after page change
     input.value = "";
     quizSubmit.classList.add('quiz__answer--submit-check');
     //clear input value
+}
+//render written answers
+function renderWrittenAnswers(){
+
 }
 //check written answer
 function checkAnswer(userAnswer, answers){

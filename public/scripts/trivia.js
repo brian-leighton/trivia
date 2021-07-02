@@ -42,7 +42,7 @@ const getRoom = () => {
     const url = window.location.toString().split("/");
     return url[url.length-1];
 }
-const announceScore = () => {
+const announceScore = (correct, total) => {
     const data = {
         user: name,
         message: `I scored ${correct} / ${total}`,
