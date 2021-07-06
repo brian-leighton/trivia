@@ -73,6 +73,40 @@
             }
         ]
     },
+    "5191": {
+        "title": "TEST QUIZ",
+        "difficulty": "mixed",
+        "quiz": [
+            {
+                "question": "QUESTION 1",
+                "type": "text",
+                "difficulty": "easy",
+                "answers": [
+                    "cat",
+                    "meow",
+                    "tits",
+                    "i",
+                    "love",
+                    "cock"
+                ]
+            },
+            {
+                "question": "QUESTION 2",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "This is the correc answer",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "This isn't.",
+                        "isCorrect": false
+                    }
+                ]
+            }
+        ]
+    },
     "5880": {
         "title": "A quiz homie",
         "difficulty": "mixed",

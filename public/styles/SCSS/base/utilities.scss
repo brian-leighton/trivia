@@ -10,6 +10,12 @@
 .u-color-grey{
     color: $color-grey-dark;
 }
+.u-color-white{
+    color: $color-white;
+}
+.u-color-red{
+    color:$color-red;
+}
 .u-left-text{
     width: 80%;
     text-align: left;
@@ -31,6 +37,9 @@
 .u-margin-bottom-large{
     margin-bottom: 3rem;
 }
+.u-padding-tiny{
+    padding: 0.25rem 0;
+}
 .u-absolute-center{
     position: absolute;
     top: 50%;
@@ -50,6 +59,9 @@
     }
     &__justify-center{
         justify-content: center;
+    }
+    &__justify-end{
+        justify-content: flex-end;
     }
 }
 

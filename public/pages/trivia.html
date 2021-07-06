@@ -63,18 +63,17 @@
                             <input type="text" id="textInput" placeholder="hi">
                             <label for="textInput">Enter your answer</label>
                         </div>
-                        <h6 id="quiz__answer--error">*answers are not case sensitive</h6>
+                        <h6 id="quiz__answer--error" class="form__error form__error--white">*answers are not case sensitive</h6>
                         <div class="quiz__answer--submit" id="submitBtn">
                             <button id="quiz__answer--submit">Submit Answer</button>
                         </div>
                     </div>
                 </div>
                 <div class="quiz__answer--display-written quiz__content--hide">
-                    <div>
-                        <span id="isCorrect"></span>
+                    <div class="u-pos-relative u-padding-tiny">
                         <p>You answered:</p>
-                        <p id="userAnswer">asdasdasd</p>
-
+                        <p id="userAnswer"></p>
+                        <div id="isCorrect" class="isCorrect__icon"></div>
                     </div>
                     <p class="heading u-margin-bottom-tiny u-center-text">Acceptable Answers:</p>
                     <ul class="quiz__answer--list">
@@ -88,10 +87,15 @@
         </div>
     </div>
     <!-- SHOW FINAL SCORE -->
-    <div class="quiz__result quiz__content--hide">
+    <div class="quiz__result">
+        <div class="flex flex__justify-end">
+            <div class="quiz__result--btn"></div>
+        </div>
         <div class="quiz__result--total">
-            <h6 id="quizTotal"></h6>
-            
+            <div>
+                <p>You scored: </p>
+                <p id="quizTotal" class="u-color-red">18/40</p>
+            </div>
         </div>
     </div>
     <!-- MESSENGER SECTION -->

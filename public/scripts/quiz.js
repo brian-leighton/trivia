@@ -94,9 +94,14 @@ function selectAnswer(event){
 }
 let stopQuiz = false;
 function isComplete(){
-    if(quizHistory.length === quiz.quiz.length){
+    let userAnswerTotal = 0;
+    quizHistory.map((question) => {
+        if(question.userAnswer){
+            userAnswerTotal++;
+        }
+    });
+    if(userAnswerTotal === quiz.quiz.length){
         if(confirm('Congratulations! Are you ready to Submit your answers?')){
-            //render result
             displayResult();
             stopQuiz = true;
         }
@@ -107,18 +112,18 @@ function displayResult(){
     calculateScore(quizHistory);
     announceScore(correctTotal, quizHistory.length);
         //   document.querySelector(".quizTotal").
-    // document.querySelector(".quiz__result").classList.toggle('quiz__content--hide');
+    document.querySelector(".quiz__result").classList.toggle('quiz__content--hide');
 }
 function calculateScore(userQuiz){
-    let total = 0;
+    //reset score
+    correctTotal = 0;
     userQuiz.forEach((question) => {
         // console.log(question.userAnswer);
         if(question.userAnswer.isCorrect){
-            console.log(question.userAnswer.answer);
-            total ++;
+            correctTotal ++;
         }
-    })
-    console.log(total);
+    });
+    return correctTotal;
 }
 function renderResult(a){
     console.log(a);
@@ -192,8 +197,11 @@ function handleTextInput(){
 function renderWrittenAnswers(question){
     document.querySelector('.quiz__answer--display-written').classList.remove('quiz__content--hide');
     const answerList = document.querySelector('.quiz__answer--list');
-    
-    document.querySelector('#userAnswer').innerText = question.userAnswer.answer;
+    const userAnswer = document.querySelector('#userAnswer');
+    const isCorrect = document.querySelector("#isCorrect");
+    userAnswer.innerText = question.userAnswer.answer;
+    //toggle a check or an x depending on result
+    isCorrect.classList.add(`${question.userAnswer.isCorrect ? "isCorrect__icon--correct" : "isCorrect__icon--incorrect"}`)
     answerList.innerHTML = "";
     question.answers.forEach((answer) => {
         const li = document.createElement('li');
@@ -206,8 +214,7 @@ function renderWrittenAnswers(question){
 function checkAnswer(userAnswer, answers){
     let answerObj = {answer: userAnswer, isCorrect: false}
     for(let i = 0; i < answers.length; i++){
-        if(userAnswer === answers[i]){
-            console.log(userAnswer.toLowerCase(), quiz.quiz[currentQuestion].answers[i].toLowerCase());
+        if(userAnswer.toLowerCase() === answers[i].toLowerCase()){
             answerObj.isCorrect = true;
         }
     }
