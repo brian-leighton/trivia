@@ -1,1 +1,1322 @@
-{}
+{
+    "4634": {
+        "title": "Test your knowledge",
+        "difficulty": "mixed",
+        "quiz": [
+            {
+                "question": "In a standard game of Monopoly, what colour are the two cheapest properties?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Blue",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Yellow",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Brown",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Green",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "How many pieces are there on the board at the start of a game of chess?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "20",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "16",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "32",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "36",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which of the following blood vessels carries deoxygenated blood?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Coronary Artery",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Pulmonary Artery",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Aorta",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Pulmonary Vein",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "To bypass US Munitions Export Laws, the creator of the PGP published all the source code in book form. ",
+                "type": "boolean",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "False",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "True",
+                        "isCorrect": true
+                    }
+                ]
+            },
+            {
+                "question": "What is the largest lake in the African continent?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Lake Malawi",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Lake Victoria",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Lake Tanganyika",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Lake Turkana",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What was the subject of the 2014 song &quot;CoCo&quot; by American rapper O. T. Genasis?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Cocaine",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Conan O&#039;Brien",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Cobalt(II) carbonate",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Coconut cream pie",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "The &quot;K&quot; in &quot;K-Pop&quot; stands for which word?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Kenyan",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Kuwaiti",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Korean",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Kazakhstan",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which of the following is NOT a real element?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "Praseodymium",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Hassium",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Lutetium",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Vitrainium",
+                        "isCorrect": true
+                    }
+                ]
+            },
+            {
+                "question": "How many sonatas did Ludwig van Beethoven write?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "50",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "21",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "31",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "32",
+                        "isCorrect": true
+                    }
+                ]
+            },
+            {
+                "question": "Which one of these action movies are shot entirely in one take?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "The Bourne Legacy",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Ip Man 2",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "L&eacute;on: The Professional",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Victoria",
+                        "isCorrect": true
+                    }
+                ]
+            },
+            {
+                "question": "During the game&#039;s development, what was the first ever created Pok&eacute;mon?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Mew",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Rhyhorn",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Bulbasaur",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Arceus",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which of these Pok&eacute;mon cannot learn Surf?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "Linoone",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Arbok",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Tauros",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Nidoking",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "In &quot;Call Of Duty: Zombies&quot;, which map introduced the perk &quot;PhD Flopper&quot;?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Moon",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Die Rise",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Ascension",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Call Of The Dead",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Who voiced Finn in Adventure Time?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Jeremy Shada",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Tom Kenny",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Nolan North",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "John DiMaggio",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What is the name of the alien species introduced in Shadow the Hedgehog (2005)?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "The Eclipse",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Black Arms",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "The Swarm",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Black Hive",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Vietnam&#039;s national flag is a red star in front of a yellow background.",
+                "type": "boolean",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "False",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "True",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "How many strings are there on a cello?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "8",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "5",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "4",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "6",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What year did the effort to deploy the Common Core State Standards (CCSS) in the US begin?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "2006",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "2012",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "2009",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "1997",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What is the molecular formula of the active component of chili peppers(Capsaicin)?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "C6H4Cl2",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "C18H27NO3",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "C13H25NO4",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "C21H23NO3",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Who was the top scorer of the 2014 FIFA World Cup?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Neymar",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Thomas M&uuml;ller",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "James Rodr&iacute;guez",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Lionel Messi",
+                        "isCorrect": false
+                    }
+                ]
+            }
+        ]
+    },
+    "9386": {
+        "title": "Second Quiz",
+        "difficulty": "mixed",
+        "quiz": [
+            {
+                "question": "Which of the following was not one of &quot;The Magnificent Seven&quot;?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Clint Eastwood",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Steve McQueen",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Charles Bronson",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Robert Vaughn",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What is the world&#039;s most expensive spice by weight?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Saffron",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Cinnamon",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Cardamom",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Vanilla",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "How many objects are equivalent to one mole?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "6.022 x 10^23",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "6.002 x 10^22",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "6.022 x 10^22",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "6.002 x 10^23",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What name is given to all baby marsupials?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Joey",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Calf",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Pup",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Cub",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What was the name of the hero in the 80s animated video game &#039;Dragon&#039;s Lair&#039;?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "Dirk the Daring",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Arthur",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Sir Toby Belch",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Guy of Gisbourne",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "The flag of South Africa features 7 colours.",
+                "type": "boolean",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "False",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "True",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "On a dartboard, what number is directly opposite No. 1?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "19",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "20",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "12",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "15",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "In World War II, Hawker Typhoons served in the Pacific theater.",
+                "type": "boolean",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "False",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "True",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which of the following car manufacturers had a war named after it?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Toyota",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Honda",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Ford",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Volkswagen",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which of the following former Yugoslavian states is landlocked?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Serbia",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Bosnia and Herzegovina",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Montenegro",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Croatia",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What was the first &quot;Team Fortress 2&quot; update to include a war?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Sniper vs. Spy Update",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "WAR! Update",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Meet Your Match Update",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Spy Vs. Engineer Update",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "In Portal 2, how did CEO of Aperture Science, Cave Johnson, presumably die?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Moon Rock Poisoning",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Accidentally sending a portal to the Moon",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Slipped in the shower",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Asbestos Poisoning",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "By how many minutes are you late to work in &quot;Half-Life&quot;?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "30",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "5",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "60",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "15",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Where and when was the first cardboard box made for industrial use?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "England, 1817",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "United States, 1817",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "England, 1917",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "United States, 1917",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What video game sparked controversy because of its hidden &quot;Hot Coffee&quot; minigame?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Grand Theft Auto: San Andreas",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Grand Theft Auto: Vice City",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Hitman: Blood Money",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Cooking Mama",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What year was the first San Diego Comic-Con?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "1970",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "2000",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "1990",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "1985",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What musician made the song &quot;Fuckin` Perfect&quot; in 2010?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "P!nk",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Mitis",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Adam lambert",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Koven",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Before voicing Pearl in Steven Universe, Deedee Magno Hall was part of which American band?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "The Party",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "The Weather Girls",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "The Pussycat Dolls",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "The Cheetah Girls",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What year was Apple Inc. founded?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "1976",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "1978",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "1980",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "1974",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Who is attributed credit for recording the epic poem The Odyssey?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Homer",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Aristotle",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Odysseus",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Socrates",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "In Monster Hunter Generations, guild style is a type of hunting style.",
+                "type": "boolean",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "True",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "False",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "In the 1992 film &quot;Army of Darkness&quot;, what name does Ash give to his double-barreled shotgun?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Boomstick",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Bloomstick",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Blastbranch",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "2-Pump Chump",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "In Heroes of the Storm, the Cursed Hollow map gimmick requires players to kill the undead to curse the enemy team.",
+                "type": "boolean",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "False",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "True",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which of the following countries was the first to send an object into space?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Germany",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "USA",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Russia",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "China",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which game in the &quot;Dark Souls&quot; series does the player play as the &quot;Ashen One&quot;?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "Dark Souls III",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Dark Souls I",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Bloodborne",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Demon Souls",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Who was elected leader of the UK Labour Party in September 2015?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Jeremy Corbyn",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Ed Miliband",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "David Cameron",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Theresa May",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "In United States history, how many vice presidents did Franklin D. Roosevelt have during his time in office as president?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "3",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "1",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "2",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "0",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Helen Clark was the 37th Prime Minister of Australia.",
+                "type": "boolean",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "False",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "True",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What is the make and model of the tour vehicles in &quot;Jurassic Park&quot; (1993)?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "1992 Ford Explorer XLT",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "1992 Toyota Land Cruiser",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "1992 Jeep Wrangler YJ Sahar",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Mercedes M-Class",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "The ghosts in &quot;Pac-Man&quot; and &quot;Ms. Pac-Man&quot; have completely different behavior.",
+                "type": "boolean",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "True",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "False",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "In &quot;Resident Evil 2&quot;, what is Leon Kennedy&#039;s middle name?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Scott",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Shaun",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Simon",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Sam",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Where is Apple Inc. headquartered?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "Cupertino, California",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Redwood City, California",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Redmond, Washington",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Santa Monica, CA",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Who is credited with having created the world&#039;s first video game Easter Egg?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Warren Robinett",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Julius Smith",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Will Crowther",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Don Woods",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What team did England beat in the semi-final stage to win in the 1966 World Cup final?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "Portugal",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "West Germany",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Soviet Union",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Brazil",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "In the MMO RPG &quot;Realm of the Mad God&quot;, what dungeon is widely considered to be the most difficult?",
+                "type": "multiple",
+                "difficulty": "hard",
+                "answers": [
+                    {
+                        "answer": "The Shatter&#039;s",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Snake Pit",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "The Tomb of the Acient&#039;s",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "The Puppet Master&#039;s Theater",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "&quot;Stadium of Light&quot; is the home stadium for which soccer team?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Sunderland FC",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Barcelona FC",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Paris Saints-Germain",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Manchester United",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "The architect known as Le Corbusier was an important figure in what style of architecture?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Modernism",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Neoclassical",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Baroque",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Gothic Revival",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which of these is not a member of the virtual band Gorillaz?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Phi Cypher",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Murdoc Niccals",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Noodle",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Russel Hobbs",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which of these covert groups employs Sam Fisher to work as a Splinter Cell?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Third Echelon",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Voron",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Black Arrow",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "The Engineers",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "In &quot;Resident Evil&quot;, only Chris has access to the grenade launcher.",
+                "type": "boolean",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "False",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "True",
+                        "isCorrect": false
+                    }
+                ]
+            }
+        ]
+    }
+}
