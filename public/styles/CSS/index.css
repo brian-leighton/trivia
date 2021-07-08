@@ -246,6 +246,7 @@ a {
   overflow: hidden;
   font-family: "Noto Sans", sans-serif;
   border-radius: 3px;
+  z-index: 1000;
 }
 @media (max-width: 40em) {
   .chat {

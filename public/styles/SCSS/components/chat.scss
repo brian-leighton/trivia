@@ -6,7 +6,7 @@
     overflow: hidden;
     font-family:'Noto Sans', sans-serif;
     border-radius: 3px;
-
+    z-index: 1000;
     @include mq("small"){
         right: 0;
     }
