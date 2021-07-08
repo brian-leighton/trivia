@@ -316,11 +316,11 @@ a {
   left: -0.1rem;
 }
 .chat__main {
-  height: 17.8rem;
-  transition: all 0.6s ease-in;
+  max-height: 100rem;
+  transition: all 0.8s linear;
 }
 .chat__main--hide {
-  height: 0;
+  max-height: 0;
   visibility: hidden;
 }
 .chat__messages {
@@ -370,6 +370,16 @@ a {
 }
 .chat__form > input {
   border: none;
+}
+.chat__username {
+  display: flex;
+  background: #dee2e6;
+}
+.chat__username > p {
+  margin-right: 1rem;
+}
+.chat__username > input {
+  flex: 1;
 }
 .list {
   list-style: none;
@@ -480,6 +490,7 @@ a {
   overflow: hidden;
 }
 .quiz__history {
+  position: relative;
   background: #303030;
   flex: 0 0 20%;
   max-height: 100vh;
@@ -574,17 +585,59 @@ a {
     opacity: 1;
   }
   .quiz__history--expand > .quiz__history--btn {
-    right: 0;
     transform: translate(0%);
+    background: #D11A2A;
+    border: 2px solid transparent;
+    border-radius: 2px 0 0 2px;
+  }
+  .quiz__history--expand > .quiz__history--btn > div {
+    background: transparent;
+  }
+  .quiz__history--expand > .quiz__history--btn > div::before, .quiz__history--expand > .quiz__history--btn > div::after {
+    top: 0;
+    transition: all 1s;
+    background: #fff;
+  }
+  .quiz__history--expand > .quiz__history--btn > div::before {
+    transform: rotate(45deg);
+  }
+  .quiz__history--expand > .quiz__history--btn > div::after {
+    transform: rotate(135deg);
   }
 }
 .quiz__history--btn {
   visibility: hidden;
-  background: green;
+  background: #edf5e1;
+  border: 2px solid #303030;
+  border-radius: 0 2px 2px 0;
   position: absolute;
+  height: 1.75rem;
+  width: 1.75rem;
   right: 0;
   transform: translate(99%);
-  padding: 0.25rem 0.5rem;
+}
+.quiz__history--btn > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 2px;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  background: #303030;
+  cursor: pointer;
+}
+.quiz__history--btn > div::before, .quiz__history--btn > div::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+.quiz__history--btn > div::before {
+  top: 6px;
+}
+.quiz__history--btn > div::after {
+  top: -6px;
 }
 @media (max-width: 65em) {
   .quiz__history--btn {
@@ -692,7 +745,7 @@ a {
   background: #dee2e6;
   color: #303030;
   border-radius: 2px;
-  filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+  filter: drop-shadow(-1px 6px 3px rgba(212, 175, 55, 0.2));
   cursor: pointer;
 }
 .quiz__answer--multiple:hover {
@@ -855,10 +908,7 @@ a {
 }
 .quiz__result {
   background: #05386b;
-  position: absolute;
   z-index: 1000;
-  top: 50%;
-  left: 50%;
   transform: translate(-10%, -100%);
   transition: opacity 0.4s ease-in;
 }
@@ -974,6 +1024,18 @@ a {
 .isIncorrect {
   background: #D11A2A;
   border: 2px solid #303030;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: red;
+  z-index: 1000;
 }
 
 .landing {

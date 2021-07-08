@@ -8,6 +8,7 @@
     // background: $color-grey;
 
     &__history{
+        position: relative;
         // border-right: 2px solid $color-grey;
         background: $color-grey-dark;
         flex: 0 0 20%;
@@ -107,20 +108,67 @@
                 & > * {
                     opacity: 1;
                 }
-                & > .quiz__history--btn{
-                    right: 0;
+                & > .quiz__history--btn {
                     transform: translate(0%);
+                    background: $color-red;
+                    border: 2px solid transparent;
+                    border-radius: 2px 0 0 2px;
+                    //hamburger to X 
+                    & > div {
+                        background: transparent;
+                        &::before,&::after{
+                            top: 0;
+                            transition: all 1s;
+                            background: $color-white;
+                        }
+                        &::before{
+                            transform: rotate(45deg);
+                        }
+                        &::after{
+                            transform: rotate(135deg);    
+                        // background: ;
+                        }
+                    }
                 }
             }
         }
 
         &--btn{
             visibility: hidden;
-            background: green;
+            background: $color-tertiary;
+            border: 2px solid $color-grey-dark;
+            border-radius: 0 2px 2px 0;
+
             position: absolute;
+            height: 1.75rem;
+            width: 1.75rem;
             right: 0;
             transform: translate(99%);
-            padding: .25rem .5rem;
+            //hamburger icon to X
+            & > div {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                height: 2px;
+                width: 80%;
+                transform: translate(-50%, -50%);
+                background: $color-grey-dark;
+                cursor: pointer;
+                &::before,&::after{
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    // background: $color-grey-dark;
+                    background: inherit;
+                }
+                &::before {
+                    top: 6px;
+                }
+                &::after{
+                    top: -6px;
+                }
+            }
             @include mq("medium"){
                 visibility: visible;
                 opacity: 1;
@@ -229,7 +277,7 @@
             background: $color-grey;
             color: $color-grey-dark;
             border-radius: 2px;
-            filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+            filter: drop-shadow(-1px 6px 3px rgba($color-gold, .2));
             cursor: pointer;
             &:hover{
                 background: $color-secondary;
@@ -405,10 +453,10 @@
     }
     &__result{
         background: $color-primary;
-        position: absolute;
+        // position: absolute;
         z-index: 1000;
-        top: 50%;
-        left: 50%;
+        // top: 50%;
+        // left: 50%;
         transform: translate(-10%, -100%);
         transition: opacity .4s ease-in;
         // height: 100vh;
@@ -527,4 +575,15 @@
 .isIncorrect{
     background: $color-red;
     border: 2px solid $color-grey-dark;
+}
+.modal{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: red;
+    z-index: 1000;
 }

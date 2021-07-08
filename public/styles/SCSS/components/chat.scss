@@ -88,15 +88,12 @@
         }
     }
     &__main{
-        height: 17.8rem;
-        // border: 2px solid $color-primary;
-        // border-top: 0;
-        // border-bottom:0;
-        transition: all .6s ease-in;
+        max-height: 100rem;
+        transition: all .8s linear;
         
         // class to hide main chat window
         &--hide{
-            height: 0;
+            max-height: 0;
             visibility: hidden;
         }
     }
@@ -155,6 +152,16 @@
         }
         & > input {
             border: none;
+        }
+    }
+    &__username{
+        display: flex;
+        background: $color-grey;
+        & > p {
+            margin-right: 1rem;
+        }
+        & > input {
+            flex: 1;
         }
     }
     &__close{

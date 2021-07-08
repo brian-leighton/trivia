@@ -35,9 +35,14 @@ module.exports = (app) => {
         }
     });
 
+    //get current trivia
     app.get("/get/trivia/:id", async(req, res) => {
         try{
             let response = await db.getData(`/${req.params.id}`);
+            //shuffle answers
+            response.quiz.map((question) => {
+                question.answers = shuffle(question.answers);
+            });
             res.send(response);
         } catch(err){
             // res.send("Sorry we don't have a record of this quiz. Please try again.");
@@ -45,3 +50,22 @@ module.exports = (app) => {
         }
     });
 }
+
+//shuffle answers so they aren't the same every time
+function shuffle(array) {
+    var currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }

@@ -35,8 +35,11 @@ const toggleChatBtn = document.getElementById("chat__close");
 toggleChatBtn.addEventListener('click', toggleChat);
 
 //JOIN ROOM
-// const name = prompt("What name are you playing under today?") || "Guest";
-const name = "BRIAN";
+var name = "GUEST";
+//handle user changing name
+document.querySelector(".chat__username--input").addEventListener('input', (e) => {
+    name = e.target.value;
+});
 //return the triviaID to be used for socketio room
 const getRoom = () => {
     const url = window.location.toString().split("/");

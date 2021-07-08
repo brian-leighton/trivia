@@ -16,3 +16,7 @@ const quizSubmit = document.querySelector(".quiz__answer--submit");
 document.querySelector("#quiz__answer--submit").addEventListener('click', (e) => {
     quizSubmit.classList.toggle("quiz__answer--submit-check");
 });
+
+document.querySelector(".quiz__result--btn").addEventListener('click', () => {
+    document.querySelector('.modal').classList.toggle("quiz__content--hide");
+});

@@ -10,8 +10,6 @@ window.onload = async () => {
 }
 let quiz = [];
 let quizHistory = [];
-let correctTotal = 0;
-let incorrectTotal = 0;
 // reference to question index in array
 let currentQuestion = 0;
 //render question(quiz.quiz[currentQuestion])
@@ -109,24 +107,21 @@ function isComplete(){
 }
 function displayResult(){
     const container = document.querySelector(".quiz__result--total");
-    calculateScore(quizHistory);
-    announceScore(correctTotal, quizHistory.length);
-        //   document.querySelector(".quizTotal").
-    document.querySelector(".quiz__result").classList.toggle('quiz__content--hide');
+    let score = calculateScore(quizHistory);
+    announceScore(score, quizHistory.length);
+    document.querySelector(".modal").classList.toggle('quiz__content--hide');
+    document.querySelector(".quiz__controls").classList.remove("quiz__content--hide");
+    document.querySelector("#quizTotal").innerText = `${score}/${quizHistory.length}`;
+    document.querySelector("#quizPercent").innerText = `${(score / quizHistory.length) * 100}%`
 }
 function calculateScore(userQuiz){
-    //reset score
-    correctTotal = 0;
+    let correctTotal = 0;
     userQuiz.forEach((question) => {
-        // console.log(question.userAnswer);
         if(question.userAnswer.isCorrect){
             correctTotal ++;
         }
     });
     return correctTotal;
-}
-function renderResult(a){
-    console.log(a);
 }
 //select next question
 function nextQuestion(){

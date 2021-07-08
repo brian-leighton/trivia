@@ -8,39 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="">
     <link rel="stylesheet" type="text/css" href="/styles/CSS/index.css">
     <title>Trivia At the Brewhouse</title>
 </head>
 <body>
     <div class="quiz">
         <div class="quiz__history">
-            <div class="quiz__history--btn">X</div>
+            <div class="quiz__history--btn">
+                <div></div>
+            </div>
             <!-- Display questions already answered -->
             <div class="quiz__history--answers">
                 <h1 class="u-center-text ">Question History</h1>
                 <h6 class="u-center-text">Review and change your answers</h6>
                 <ol id="history">
-                    <!-- <li><span>How many people witnessed the death of elvis?</span></li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li><span>How many people witnessed the death of elvis?</span></li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li><span>How many people witnessed the death of elvis?</span></li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li><span>How many people witnessed the death of elvis?</span></li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li><span>How many people witnessed the death of elvis?</span></li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li>Who shall reckon the number of the beast? And What is it's number?</li>
-                    <li>Who shall reckon the number of the beast? And What is it's number? Who shall reckon the number of the beast? And What is it's number? Who shall reckon the number of the beast? And What is it's number? Who shall reckon the number of the beast? And What is it's number? 999</li> -->
                 </ol>
             </div>
         </div>
@@ -80,24 +61,27 @@
                         
                     </ul>
                 </div>
-            <div class="quiz__controls">
+            <div class="quiz__controls quiz__content--hide">
                 <div class="btn btn__tertiary" id="last">PREVIOUS QUESTION</div>
                 <div class="btn btn__secondary" id="next">NEXT QUESTION</div>
              </div>
         </div>
     </div>
     <!-- SHOW FINAL SCORE -->
-    <div class="quiz__result">
-        <div class="flex flex__justify-end">
-            <div class="quiz__result--btn"></div>
-        </div>
-        <div class="quiz__result--total">
-            <div>
-                <p>You scored: </p>
-                <p id="quizTotal" class="u-color-red">18/40</p>
+    <div class="modal quiz__content--hide">
+        <div class="quiz__result">
+            <div class="flex flex__justify-end">
+                <div class="quiz__result--btn"></div>
             </div>
+            <div class="quiz__result--total">
+                <div>
+                    <p>You scored: </p>
+                    <p id="quizPercent" class="u-color-red"></p>
+                    <p id="quizTotal" class="u-color-red">18/40</p>
+                </div>
+            </div>
+            
         </div>
-        
     </div>
     <!-- MESSENGER SECTION -->
     <div class="chat">
@@ -108,9 +92,13 @@
             </div>
         </div>
         <div class="chat__main chat__main--hide">
+            <div class="chat__username">
+                <p>Chatting as:</p> 
+                <input type="text" class="chat__username--input">
+            </div>
             <div class="chat__messages" id="message_container"></div>
             <form class="chat__form">
-                <input type="text" id="chat_input" autocomplete=off>
+                <input type="text" id="chat_input" autocomplete=off placeholder="Guest">
                 <button type="submit" class="btn btn__secondary" id="chat_submit">Send</button>
             </form>
         </div>
