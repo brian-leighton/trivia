@@ -443,6 +443,32 @@ a {
   color: #379683;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: rgba(48, 48, 48, 0.8);
+  z-index: 1000;
+  transition: all 0s !important;
+}
+
+.progress-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
 .form__floating {
   position: relative;
   background: yellow;
@@ -908,9 +934,14 @@ a {
 }
 .quiz__result {
   background: #05386b;
+  padding: 2rem 0;
+  position: relative;
   z-index: 1000;
-  transform: translate(-10%, -100%);
   transition: opacity 0.4s ease-in;
+}
+.quiz__result > div:first-of-type {
+  position: absolute;
+  top: 0;
 }
 .quiz__result--btn {
   display: inline-block;
@@ -1024,18 +1055,6 @@ a {
 .isIncorrect {
   background: #D11A2A;
   border: 2px solid #303030;
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  background: red;
-  z-index: 1000;
 }
 
 .landing {

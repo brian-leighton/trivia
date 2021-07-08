@@ -112,7 +112,8 @@ function displayResult(){
     document.querySelector(".modal").classList.toggle('quiz__content--hide');
     document.querySelector(".quiz__controls").classList.remove("quiz__content--hide");
     document.querySelector("#quizTotal").innerText = `${score}/${quizHistory.length}`;
-    document.querySelector("#quizPercent").innerText = `${(score / quizHistory.length) * 100}%`
+    // document.querySelector("#quizPercent").innerText = `${(score / quizHistory.length) * 100}%`
+    updateProgress(score, quizHistory.length);
 }
 function calculateScore(userQuiz){
     let correctTotal = 0;
@@ -145,6 +146,9 @@ function previousQuestion(){
     currentQuestion = currentQuestion - 1;
     renderQuestion(quiz.quiz[currentQuestion]);
 }
+// event listeners for next/last question buttons
+document.querySelector('#next').addEventListener('click', nextQuestion);
+document.querySelector('#last').addEventListener('click', previousQuestion);
 function updateHistory(question, index){
     for(let i = 0; i < quizHistory.length; i++){
         //if question already exsist in history don't add
@@ -215,4 +219,19 @@ function checkAnswer(userAnswer, answers){
     }
     return answerObj;
 }
-//tally final score
+
+// progress circle
+let circle = document.querySelector('circle');
+let radius = circle.r.baseVal.value;
+let circumference = 2 * Math.PI * radius;
+
+circle.style.strokeDasharray = `${circumference} ${circumference}`;
+circle.style.strokeDashoffset = `${circumference}`;
+
+function updateProgress(score, quizLength){
+    const percent = score / quizLength * 100;
+    console.log(percent);
+    const offset = circumference - percent / 100 * circumference;
+    circle.style.strokeDashoffset = offset;
+}
+

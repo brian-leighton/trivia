@@ -17,6 +17,17 @@ document.querySelector("#quiz__answer--submit").addEventListener('click', (e) =>
     quizSubmit.classList.toggle("quiz__answer--submit-check");
 });
 
-document.querySelector(".quiz__result--btn").addEventListener('click', () => {
+document.querySelector(".quiz__result--btn").addEventListener('click', (e) => {
+    // e.stopImmediatePropagation();
+    e.stopPropagation();
     document.querySelector('.modal').classList.toggle("quiz__content--hide");
+});
+
+const modal = document.querySelector(".modal");
+modal.addEventListener('click', (e) => {
+    // check if the parent is clicked to catch only modal event
+    if(modal === e.target){
+        console.log('parent click');
+        modal.classList.toggle("quiz__content--hide");
+    }
 });

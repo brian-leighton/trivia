@@ -75,8 +75,24 @@
             </div>
             <div class="quiz__result--total">
                 <div>
+                    <svg
+                    class="progress-ring"
+                    width="200"
+                    height="200">
+                    <radialGradient id="myGradient">
+                        <stop offset="10%" stop-color="gold" />
+                        <stop offset="95%" stop-color="red" />
+                    </radialGradient>
+                   <circle
+                     class="progress-ring__circle"
+                     stroke="url('#myGradient')"
+                     stroke-width="5"
+                     fill="transparent"
+                     r="90"
+                     cx="50%"
+                     cy="50%"/>
+                 </svg>             
                     <p>You scored: </p>
-                    <p id="quizPercent" class="u-color-red"></p>
                     <p id="quizTotal" class="u-color-red">18/40</p>
                 </div>
             </div>

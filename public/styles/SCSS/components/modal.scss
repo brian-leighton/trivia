@@ -1,0 +1,12 @@
+.modal{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: rgba($color-grey-dark, .8);
+    z-index: 1000;
+    transition: all 0s !important;
+}
