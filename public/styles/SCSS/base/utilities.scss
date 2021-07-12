@@ -1,6 +1,9 @@
 .u-center-text{
     text-align: center;
 }
+.u-background-primary{
+    background: $color-primary;
+}
 .u-color-primary{
     color: $color-primary;
 }
@@ -40,6 +43,9 @@
 .u-padding-tiny{
     padding: 0.25rem 0;
 }
+.u-padding-small{
+    padding: 1rem;
+}
 .u-absolute-center{
     position: absolute;
     top: 50%;
@@ -51,6 +57,9 @@
 }
 .u-background-secondary{
     background-color: $color-secondary;
+}
+.u-background-grey-dark{
+    background: $color-grey-dark;
 }
 .flex{
     display: flex;

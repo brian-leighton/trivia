@@ -199,13 +199,13 @@ quizSubmit.addEventListener('click', async (e) => {
     }
     try{
         // save generated quiz to database
-        await axios.request({
-            method: "post",
-            url: "/new/quiz",
-            data: quiz,
-        }).then((res) => {
-            quizList.push({id: res.data, title: quiz.title, length: quiz.quiz.length});
-        });
+        // await axios.request({
+        //     method: "post",
+        //     url: "/new/quiz",
+        //     data: quiz,
+        // }).then((res) => {
+        //     quizList.push({id: res.data, title: quiz.title, length: quiz.quiz.length});
+        // });
         renderQuiz(quiz);
     } catch(err){
         console.log(err);
@@ -233,28 +233,38 @@ function displayQuestion(questions){
         let container = document.createElement('li'),
             header = document.createElement('h4'),
             li = document.createElement('li');
-            header.innerText = `${questions[i].question}`
-            quizQuestions.appendChild(header);
-            // console.log(typeof questions[i].answers);
+            header.innerHTML = `${questions[i].question}`
+            header.classList.add("createdQuestion");
+            li.appendChild(header);
+            header.addEventListener('click', (e) => toggleAnswerDisplay(e))
             // for written question answers
             if(typeof questions[i].answers === "string"){
                 //filter will remove the empty string at the end of the split array because an empty string ("") is falsy 
-                quizQuestions.appendChild(displayAnswers(questions[i].answers.split("~").filter(s => s)));
+                li.appendChild(displayAnswers(questions[i].answers.split("~").filter(s => s)));
             } else {
-                quizQuestions.appendChild(displayAnswers(questions[i].answers));
+                li.appendChild(displayAnswers(questions[i].answers));
             }
+            quizQuestions.appendChild(li);
             // customQuestionType.value === "multiple" ?
-                //  quizQuestions.appendChild(displayAnswer(questions[i].answers))
-            
+                //  quizQuestions.appendChild(displayAnswer(questions[i].answers))     
     }
 }
 
+function toggleAnswerDisplay(event){
+    let div = event.target.closest('h4');
+    let node = Array.from(document.querySelector(".createdQuestion").children);
+    let index = node.indexOf(div);
+    // div.style.color = "pink";
+    console.log(div, node, index);
+}
 function displayAnswers(answers){
     // console.log(answers.length);
     let container = document.createElement('ul');
+    container.classList.add("form-creation__display--answers");
     for(let i = 0; i < answers.length; i++){
         let li = document.createElement('li');
-        li.innerText = answers[i].answer || answers[i];
+        li.classList.add("u-color-primary");
+        li.innerHTML = answers[i].answer || answers[i];
         // check if it's the correct answer and add a correct answer class 
         container.appendChild(li);
 

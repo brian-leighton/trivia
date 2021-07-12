@@ -42,6 +42,10 @@ a {
   text-align: center;
 }
 
+.u-background-primary {
+  background: #05386b;
+}
+
 .u-color-primary {
   color: #05386b;
 }
@@ -93,6 +97,10 @@ a {
   padding: 0.25rem 0;
 }
 
+.u-padding-small {
+  padding: 1rem;
+}
+
 .u-absolute-center {
   position: absolute;
   top: 50%;
@@ -106,6 +114,10 @@ a {
 
 .u-background-secondary {
   background-color: #379683;
+}
+
+.u-background-grey-dark {
+  background: #303030;
 }
 
 .flex {
@@ -470,6 +482,33 @@ a {
   transform-origin: 50% 50%;
 }
 
+.form {
+  position: relative;
+}
+.form__main {
+  background-color: #379683;
+  border: 1px solid #9d9d9d;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.5rem;
+}
+@media (max-width: 28em) {
+  .form__main {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+.form__sub {
+  width: 100%;
+  top: 0;
+}
+.form-switch {
+  margin-bottom: 2rem;
+}
+.form-switch label {
+  text-align: left;
+  display: block;
+}
 .form__floating {
   position: relative;
   background: yellow;
@@ -507,6 +546,35 @@ a {
   color: #fff;
   font-weight: 400;
   letter-spacing: 1px;
+}
+
+.form-creation {
+  background: #303030;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.form-creation h1 {
+  color: #fff;
+  flex: 1 0 100%;
+}
+.form-creation > form {
+  flex: 0 0 60%;
+  max-width: 25rem;
+}
+.form-creation__display {
+  background: #fff;
+  flex: 1;
+}
+.form-creation__display--questions {
+  color: green;
+  list-style-type: none;
+}
+.form-creation__display--answers {
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+  color: red;
 }
 
 .quiz {
@@ -1145,45 +1213,11 @@ a {
   }
 }
 
-body {
-  background: #edf5e1;
-}
-
 .hidden {
   visibility: hidden;
+  height: 0;
 }
 
-.form {
-  position: relative;
-}
-.form__main {
-  background-color: white;
-  border: 1px solid #9d9d9d;
-  border-radius: 5px;
-  max-width: 50%;
-  min-width: 25rem;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0.5rem;
-}
-@media (max-width: 28em) {
-  .form__main {
-    max-width: 100%;
-    min-width: 100%;
-  }
-}
-.form__sub {
-  position: absolute;
-  width: 100%;
-  top: 0;
-}
-.form-switch {
-  margin-bottom: 2rem;
-}
-.form-switch label {
-  text-align: left;
-  display: block;
-}
 .multipleChoice__answer {
   width: 80%;
   margin: 0 auto;
@@ -1196,14 +1230,14 @@ body {
 
 #quiz_submit {
   display: inline-block;
-  background: green;
+  background: #198754;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
   margin: 0 auto;
-  padding: 0.35rem 0.7rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 3px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 50%);
 }
 
 #next_question {
