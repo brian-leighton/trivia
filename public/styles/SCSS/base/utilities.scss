@@ -19,6 +19,9 @@
 .u-color-red{
     color:$color-red;
 }
+.u-color-green{
+    color: $color-green;
+}
 .u-left-text{
     width: 80%;
     text-align: left;
@@ -71,6 +74,15 @@
     }
     &__justify-end{
         justify-content: flex-end;
+    }
+    &__wrap{
+        flex-wrap: wrap;
+    }
+    &__gap{
+
+        &--small{
+            gap: 0 2rem;
+        }
     }
 }
 

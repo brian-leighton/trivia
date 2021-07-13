@@ -98,15 +98,44 @@
         background: $color-white;
         flex: 1;
         &--questions{
-            color: green;
-            list-style-type: none;
+            color: $color-white;
+            background: $color-primary;
+            // padding: .25rem 0 .25rem 2rem ;
+        }
+        & h4 {
+            // question
+            cursor: pointer;
         }
         &--answers{
-            height: 0;
+            max-height: 0;
             font-size: 0;
+            padding: 0 0 1rem 0;
             visibility: hidden;
-            color: red;
+            color: $color-red;
+            font-weight: 700;
+            letter-spacing: 1px;
+            list-style-type: lower-alpha;
+            font-family: $font-primary;
+        }
+        &--answer{
+            font-family: $font-secondary;
+            &-written{
+                font-size: .8rem;
+                list-style: none;
+                padding: 0;
+                line-height: 0;
+                color: $color-green;
+            }
         }
     }
   }
+
+  .displayAnswers{
+    max-height: 100vh;
+    visibility: visible;
+    font-size: 1rem;
+}
+.correct{
+    color: $color-green;
+}
 

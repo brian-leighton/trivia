@@ -1462,5 +1462,95 @@
                 ]
             }
         ]
+    },
+    "9433": {
+        "title": "qweqweqwe",
+        "difficulty": "mixed",
+        "quiz": [
+            {
+                "question": "The Doppler effect applies to light.",
+                "type": "boolean",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "True",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "False",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "In the &quot;Toaru Majutsu no Index&quot; anime, Touma Kamijou is a level 0 esper that has the ability to do what?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "Dispell any esper or magical powers",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Teleport",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Make telepathic communications",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Create electricity from his own body",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "Which song on Daft Punk&#039;s &quot;Random Access Memories&quot; features Pharrell Williams?",
+                "type": "multiple",
+                "difficulty": "easy",
+                "answers": [
+                    {
+                        "answer": "Get Lucky",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Doin&#039; It Right",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Instant Crush",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "The Game of Love",
+                        "isCorrect": false
+                    }
+                ]
+            },
+            {
+                "question": "What is the name of the 8th installment in the Fire Emblem series?",
+                "type": "multiple",
+                "difficulty": "medium",
+                "answers": [
+                    {
+                        "answer": "The Sacred Stones",
+                        "isCorrect": true
+                    },
+                    {
+                        "answer": "Blazing Sword",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Awakening",
+                        "isCorrect": false
+                    },
+                    {
+                        "answer": "Path of Radiance",
+                        "isCorrect": false
+                    }
+                ]
+            }
+        ]
     }
 }

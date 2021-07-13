@@ -192,6 +192,7 @@ function formatResponse(questions){
 
 quizSubmit.addEventListener('click', async (e) => {
     let quiz = await prepareQuiz(newQuiz);
+    console.log(quiz);
     // handle form input errors eg: no name, no questions, etc
     if(typeof quiz !== "object"){
         // set error message
@@ -206,7 +207,7 @@ quizSubmit.addEventListener('click', async (e) => {
         // }).then((res) => {
         //     quizList.push({id: res.data, title: quiz.title, length: quiz.quiz.length});
         // });
-        renderQuiz(quiz);
+        quizList = [];
     } catch(err){
         console.log(err);
     }
@@ -219,7 +220,6 @@ function renderQuiz(quiz){
           quizName = document.getElementById('created_quiz_name'),
           quizDifficulty = document.getElementById('created_quiz_difficulty');
     let result = [];
-    // console.log('render', quiz);
     quizName.innerText = quiz.title;
     quizDifficulty.innerText = quiz.difficulty;
     displayQuestion(quiz.quiz);
@@ -233,39 +233,47 @@ function displayQuestion(questions){
         let container = document.createElement('li'),
             header = document.createElement('h4'),
             li = document.createElement('li');
-            header.innerHTML = `${questions[i].question}`
+            header.innerHTML = `${questions[i].question}`;
             header.classList.add("createdQuestion");
             li.appendChild(header);
-            header.addEventListener('click', (e) => toggleAnswerDisplay(e))
-            // for written question answers
-            if(typeof questions[i].answers === "string"){
-                //filter will remove the empty string at the end of the split array because an empty string ("") is falsy 
-                li.appendChild(displayAnswers(questions[i].answers.split("~").filter(s => s)));
-            } else {
-                li.appendChild(displayAnswers(questions[i].answers));
-            }
+            header.addEventListener('click', (e) => toggleAnswerDisplay(e));
+            questions[i].type === "text" ? `${li.appendChild(displayAnswers(questions[i].answers, true))}` : `${li.appendChild(displayAnswers(questions[i].answers))}`;
+            // if(questions[i].type === "text"){
+            //     // li.appendChild(displayAnswers(questions[i].answers.split(" ").filter(s => s)));
+            //     li.appendChild(displayAnswers(questions[i].answers));
+            // } else {
+            //     li.appendChild(displayAnswers(questions[i].answers));
+
+            // }
             quizQuestions.appendChild(li);
-            // customQuestionType.value === "multiple" ?
-                //  quizQuestions.appendChild(displayAnswer(questions[i].answers))     
     }
 }
 
 function toggleAnswerDisplay(event){
-    let div = event.target.closest('h4');
-    let node = Array.from(document.querySelector(".createdQuestion").children);
+    let div = event.target.closest("li");
+    let node = Array.from(document.querySelector(".form-creation__display--questions").children);
     let index = node.indexOf(div);
-    // div.style.color = "pink";
-    console.log(div, node, index);
+    document.querySelectorAll(".form-creation__display--answers")[index].classList.toggle("displayAnswers");
 }
-function displayAnswers(answers){
+function displayAnswers(answers, isWritten){
     // console.log(answers.length);
     let container = document.createElement('ul');
     container.classList.add("form-creation__display--answers");
+    let p = document.createElement('p');
+    p.innerText = "Acceptable Answers:";
+    p.classList.add('col-12');
+    isWritten ? container.appendChild(p) : null;
     for(let i = 0; i < answers.length; i++){
         let li = document.createElement('li');
-        li.classList.add("u-color-primary");
-        li.innerHTML = answers[i].answer || answers[i];
         // check if it's the correct answer and add a correct answer class 
+        li.innerHTML = answers[i].answer || answers[i];
+        if(isWritten){
+            container.classList.add("flex", "flex__wrap");
+            li.classList.add("form-creation__display--answer-written");
+        } else {
+            container.classList.remove("flex");
+            li.classList.add("form-creation__display--answer", `${answers[i].isCorrect ? 'u-color-green' : "f"}`);
+        }
         container.appendChild(li);
 
     }
