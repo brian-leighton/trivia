@@ -49,3 +49,36 @@
         cursor: pointer;
     }
 }
+
+#next_question {
+    cursor: pointer;
+    background: $color-primary;
+    color: $color-white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin: 1.5rem auto;
+    padding: 0.35rem 0.7rem;
+    border-radius: 3px;
+
+    &:hover{
+        background: lighten($color-primary, 10%);
+    }
+  }
+
+#quiz_submit{
+    display: inline-block;
+    background: $color-primary;
+    color: $color-white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border-radius: 3px;
+    &:hover{
+        background: lighten($color-primary, 10%);
+    }
+}
+
+  

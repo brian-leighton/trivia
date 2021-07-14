@@ -32,28 +32,7 @@
     max-width: 25rem;
     margin: .5rem auto;
 }
-#quiz_submit{
-    display: inline-block;
-    background: $color-green;
-    color: $color-white;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin: 0 auto;
-    padding: .5rem 1rem;
-    cursor: pointer;
-    border-radius: 3px;
-    // position: absolute;
-    // left: 50%;
-    // transform: translate(-50%, 50%);
-}
 
-#next_question{
-    background: chartreuse;
-    display: inline-block;
-    margin: .5rem auto;
-    padding: .35rem .7rem;
-    border-radius: 3px;
-}
 #custom_question{
     max-width: 25rem;
     // background: blue;

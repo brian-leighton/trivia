@@ -9,8 +9,9 @@
     <title>Document</title>
 </head>
 <body class="u-background-primary">
+    <nav>NAV BAR</nav>
     <div class="form-creation">
-        <h1 class="form-creation__heading u-center-text">Quiz Creation</h1>
+        <h1 class="heading heading__jumbo u-center-text">Quiz Creation</h1>
         <!-- Dynamically display the right form based on the user input -->
         <form action="/trivia" id="triviaCreate" class="form__main">
             <div>
@@ -101,16 +102,16 @@
         </form>
         <!-- created quiz display -->
         <div class="form-creation__display" id="created_quiz_display">
-            <h3 id="created_quiz_name" class="u-center-text heading"></h3>
-            <h5 id="created_quiz_difficulty"></h5>
+            <h3 id="created_quiz_name" class="form-creation__heading"></h3>
+            <!-- <h5 id="created_quiz_difficulty"></h5> -->
             <!-- Displays Currently worked on quiz questions -->
             <ol class="form-creation__display--questions" id="created_quiz_questions">
                 
             </ol>
+            <div class="u-width-100 flex u-background-grey-dark flex__justify--center u-padding-small">
+                <div id="quiz_submit">Create Quiz</div>
+            </div>
         </div>
-    </div>
-    <div class="flex u-background-grey-dark flex__justify--center u-padding-small">
-        <div id="quiz_submit">Create Quiz</div>
     </div>
     
 

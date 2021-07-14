@@ -152,11 +152,10 @@ async function prepareQuiz(quiz){
         let request;
         if(quizDifficulty.value === "mixed"){
             request = await axios.get(`https://opentdb.com/api.php?amount=${questionTotal.value}`);
-            triviaObj.quiz = formatResponse(request.data.results);
         } else {
             request = await axios.get(`https://opentdb.com/api.php?amount=${questionTotal.value}&difficulty=${quizDifficulty.value}`);
-            triviaObj.quiz = request.data.results;
         }
+        triviaObj.quiz = formatResponse(request.data.results);
     } else {
         triviaObj.quiz = quiz;
     }
@@ -217,11 +216,9 @@ quizSubmit.addEventListener('click', async (e) => {
 
 function renderQuiz(quiz){
     const quizDisplay = document.getElementById('created_quiz_display'),
-          quizName = document.getElementById('created_quiz_name'),
-          quizDifficulty = document.getElementById('created_quiz_difficulty');
+          quizName = document.getElementById('created_quiz_name');
     let result = [];
     quizName.innerText = quiz.title;
-    quizDifficulty.innerText = quiz.difficulty;
     displayQuestion(quiz.quiz);
 }
 
@@ -231,12 +228,16 @@ function displayQuestion(questions){
     quizQuestions.innerHTML = "";
     for(let i = 0; i < questions.length; i++){
         let container = document.createElement('li'),
-            header = document.createElement('h4'),
+            header = document.createElement('p'),
+            span = document.createElement('span'),
             li = document.createElement('li');
             header.innerHTML = `${questions[i].question}`;
-            header.classList.add("createdQuestion");
+            span.classList.add("chevron");
+            header.appendChild(span);
+            header.classList.add("createdQuestion", "heading", "heading__medium");
             li.appendChild(header);
-            header.addEventListener('click', (e) => toggleAnswerDisplay(e));
+            li.classList.add('question');
+            li.addEventListener('click', (e) => toggleAnswerDisplay(e));
             questions[i].type === "text" ? `${li.appendChild(displayAnswers(questions[i].answers, true))}` : `${li.appendChild(displayAnswers(questions[i].answers))}`;
             // if(questions[i].type === "text"){
             //     // li.appendChild(displayAnswers(questions[i].answers.split(" ").filter(s => s)));
@@ -250,9 +251,14 @@ function displayQuestion(questions){
 }
 
 function toggleAnswerDisplay(event){
-    let div = event.target.closest("li");
+    let div = event.target.closest(".question");
+    let span = event.target.closest(".chevron");
     let node = Array.from(document.querySelector(".form-creation__display--questions").children);
     let index = node.indexOf(div);
+    // span.classList.toggle("chevron__expand");
+    document.querySelectorAll('.chevron')[index].classList.toggle("chevron__expand");
+    console.log(span);
+    // div.classList.toggle("displayAnswers");
     document.querySelectorAll(".form-creation__display--answers")[index].classList.toggle("displayAnswers");
 }
 function displayAnswers(answers, isWritten){
@@ -261,6 +267,7 @@ function displayAnswers(answers, isWritten){
     container.classList.add("form-creation__display--answers");
     let p = document.createElement('p');
     p.innerText = "Acceptable Answers:";
+
     p.classList.add('col-12');
     isWritten ? container.appendChild(p) : null;
     for(let i = 0; i < answers.length; i++){
@@ -268,7 +275,7 @@ function displayAnswers(answers, isWritten){
         // check if it's the correct answer and add a correct answer class 
         li.innerHTML = answers[i].answer || answers[i];
         if(isWritten){
-            container.classList.add("flex", "flex__wrap");
+            // container.classList.add("flex", "flex__wrap", "flex__gap--small");
             li.classList.add("form-creation__display--answer-written");
         } else {
             container.classList.remove("flex");

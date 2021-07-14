@@ -10,6 +10,15 @@
     &__white{
         color: $color-tertiary;
     }
+    &__medium{
+        font-family: $font-secondary;
+        font-weight: 500;
+        font-size: 1.3rem;
+        letter-spacing: 3px;
+    }
+    &--large{
+        font-size: 3rem;
+    }
     &--jumbo{
         font-size: 4rem;
         width: 60%;
@@ -19,4 +28,16 @@
             width: 100%;
         }
     }
+}
+
+.form-creation__heading{
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    margin: 0;
+    min-height: 1.86em;
+    // background: #E7FFF8;
+    background: $color-grey-dark;
+    color: $color-white;
+    // border-bottom: .1rem solid $color-grey-dark;
 }
